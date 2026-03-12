@@ -3,8 +3,8 @@ const specGroups = [
     title: "Accommodation",
     specs: [
       { label: "Guests", value: "9" },
-      { label: "Cabins", value: "5" },
-      { label: "Configuration", value: "Double (4), Twin (1)" },
+      { label: "Cabins", value: "6" },
+      { label: "Configuration", value: "Double (4), Twin (2)" },
       { label: "Crew", value: "9" },
     ],
   },
