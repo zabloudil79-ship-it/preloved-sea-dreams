@@ -12,10 +12,10 @@ const specGroups = [
   {
     title: "Construction & Design",
     specs: [
-      { label: "Build / Refit", value: "2004 / 2015" },
-      { label: "Shipyard", value: "Shipworks Brisbane" },
-      { label: "Hull Material", value: "Aluminium" },
-      { label: "Exterior / Interior", value: "Bernie Cohen" },
+      { label: "Build / Refit", value: "2011 / 2022" },
+      { label: "Shipyard", value: "Eurocraft Cantieri Navali" },
+      { label: "Hull / Structure Material", value: "STEEL / ALUMINIUM" },
+      { label: "Exterior / Interior", value: "Eurocraft Cantieri Navali" },
       { label: "Flag", value: "Malta" },
       { label: "VAT", value: "Not Paid" },
     ],
