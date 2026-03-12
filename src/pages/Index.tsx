@@ -4,6 +4,7 @@ import QuickSpecs from "@/components/QuickSpecs";
 import YachtDescription from "@/components/YachtDescription";
 import ImageGallery from "@/components/ImageGallery";
 import Specifications from "@/components/Specifications";
+import LayoutSection from "@/components/LayoutSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
@@ -16,6 +17,7 @@ const Index = () => {
       <YachtDescription />
       <ImageGallery />
       <Specifications />
+      <LayoutSection />
       <ContactSection />
       <Footer />
     </div>
