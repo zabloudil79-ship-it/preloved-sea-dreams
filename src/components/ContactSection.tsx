@@ -12,7 +12,7 @@ const ContactSection = () => {
     lastName: "",
     phone: "",
     email: "",
-    message: "",
+    message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -28,7 +28,7 @@ const ContactSection = () => {
     setTimeout(() => {
       toast({
         title: "Inquiry Sent",
-        description: "Thank you! We will get back to you shortly.",
+        description: "Thank you! We will get back to you shortly."
       });
       setFormData({ firstName: "", lastName: "", phone: "", email: "", message: "" });
       setIsSubmitting(false);
@@ -52,7 +52,7 @@ const ContactSection = () => {
         <div className="mb-12 flex flex-col items-center justify-center gap-8 md:flex-row md:gap-16">
           <div className="flex items-center gap-3">
             <Phone className="h-5 w-5 text-primary" />
-            <span className="font-body text-foreground">+420 775 799901</span>
+            <span className="font-body text-foreground">+420 775 799 901</span>
           </div>
           <div className="flex items-center gap-3">
             <Mail className="h-5 w-5 text-primary" />
@@ -85,8 +85,8 @@ const ContactSection = () => {
                   onChange={handleChange}
                   required
                   placeholder="John"
-                  className="border-border bg-background"
-                />
+                  className="border-border bg-background" />
+                
               </div>
               <div>
                 <label className="mb-1.5 block font-body text-sm text-muted-foreground">
@@ -98,8 +98,8 @@ const ContactSection = () => {
                   onChange={handleChange}
                   required
                   placeholder="Doe"
-                  className="border-border bg-background"
-                />
+                  className="border-border bg-background" />
+                
               </div>
             </div>
             <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
@@ -113,8 +113,8 @@ const ContactSection = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="+420 000 000 000"
-                  className="border-border bg-background"
-                />
+                  className="border-border bg-background" />
+                
               </div>
               <div>
                 <label className="mb-1.5 block font-body text-sm text-muted-foreground">
@@ -127,8 +127,8 @@ const ContactSection = () => {
                   onChange={handleChange}
                   required
                   placeholder="john@example.com"
-                  className="border-border bg-background"
-                />
+                  className="border-border bg-background" />
+                
               </div>
             </div>
             <div>
@@ -142,15 +142,15 @@ const ContactSection = () => {
                 required
                 rows={5}
                 placeholder="Your message..."
-                className="border-border bg-background"
-              />
+                className="border-border bg-background" />
+              
             </div>
             <div className="pt-2 text-center">
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="gap-2 bg-primary px-12 py-4 font-body text-sm uppercase tracking-[0.2em] text-primary-foreground transition-opacity hover:opacity-90"
-              >
+                className="gap-2 bg-primary px-12 py-4 font-body text-sm uppercase tracking-[0.2em] text-primary-foreground transition-opacity hover:opacity-90">
+                
                 <Send className="h-4 w-4" />
                 {isSubmitting ? "Sending..." : "Send Inquiry"}
               </Button>
@@ -158,8 +158,8 @@ const ContactSection = () => {
           </form>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default ContactSection;
