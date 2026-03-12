@@ -4,7 +4,7 @@ const YachtDescription = () => {
       <div className="mx-auto max-w-4xl px-8">
         <div className="mb-8 text-center">
           <p className="mb-2 font-body text-sm uppercase tracking-[0.25em] text-primary">
-            Motorová jachta na prodej
+            DESCRIPTION
           </p>
           <h2 className="font-display text-4xl font-medium text-foreground">
             BARON TRENK 
