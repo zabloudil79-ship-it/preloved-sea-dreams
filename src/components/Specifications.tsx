@@ -43,10 +43,10 @@ const specGroups = [
     title: "Capacities & Tanks",
     specs: [
       { label: "Consumption (ECO)", value: "~ 100 l/h" },
-      { label: "Fuel", value: "283,905 l" },
+      { label: "Fuel", value: "105,000 l" },
       { label: "Grey Water", value: "18,927 l" },
       { label: "Black Water", value: "18,927 l" },
-      { label: "Fresh Water", value: "37,854 l" },
+      { label: "Fresh Water", value: "23,270 l" },
       { label: "Stabilisation System", value: "Fin Stabilizers" },
     ],
   },
