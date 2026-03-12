@@ -1,13 +1,27 @@
-import interiorImg from "@/assets/yacht-interior.jpg";
-import deckImg from "@/assets/yacht-deck.jpg";
-import cabinImg from "@/assets/yacht-cabin.jpg";
-import heroImg from "@/assets/yacht-hero.webp";
+import gallery1 from "@/assets/gallery-1.webp";
+import gallery2 from "@/assets/gallery-2.webp";
+import gallery3 from "@/assets/gallery-3.webp";
+import gallery4 from "@/assets/gallery-4.webp";
+import gallery5 from "@/assets/gallery-5.webp";
+import gallery6 from "@/assets/gallery-6.webp";
+import gallery7 from "@/assets/gallery-7.webp";
+import gallery8 from "@/assets/gallery-8.webp";
+import gallery9 from "@/assets/gallery-9.webp";
+import gallery10 from "@/assets/gallery-10.webp";
+import gallery11 from "@/assets/gallery-11.webp";
 
 const images = [
-  { src: heroImg, alt: "Letecký pohled na jachtu", span: "md:col-span-2 md:row-span-2" },
-  { src: interiorImg, alt: "Interiér salonu", span: "" },
-  { src: deckImg, alt: "Sluneční paluba s vířivkou", span: "" },
-  { src: cabinImg, alt: "Kabina majitele", span: "md:col-span-2" },
+  { src: gallery1, alt: "Baron Trenck – boční pohled", span: "md:col-span-2 md:row-span-2" },
+  { src: gallery2, alt: "Baron Trenck – boční pohled 2", span: "" },
+  { src: gallery3, alt: "Baron Trenck – příďový pohled", span: "" },
+  { src: gallery4, alt: "Baron Trenck – záďový pohled", span: "md:col-span-2" },
+  { src: gallery5, alt: "Sluneční paluba s vířivkou", span: "" },
+  { src: gallery6, alt: "Venkovní lounge", span: "" },
+  { src: gallery7, alt: "Sundeck s vířivkou a lehátky", span: "md:col-span-2" },
+  { src: gallery8, alt: "Alfresco dining", span: "" },
+  { src: gallery9, alt: "Vířivka – detail", span: "" },
+  { src: gallery10, alt: "Hlavní salon", span: "md:col-span-2" },
+  { src: gallery11, alt: "Salon – boční pohled", span: "" },
 ];
 
 const ImageGallery = () => {
@@ -24,7 +38,7 @@ const ImageGallery = () => {
           <div className="mx-auto mt-4 h-[2px] w-16 bg-primary" />
         </div>
 
-        <div className="grid grid-cols-1 gap-3 md:grid-cols-3 md:grid-rows-2">
+        <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
           {images.map((img, i) => (
             <div
               key={i}
