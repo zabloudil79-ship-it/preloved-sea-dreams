@@ -1,4 +1,4 @@
-import heroImage from "@/assets/yacht-hero.jpg";
+import heroImage from "@/assets/yacht-hero.webp";
 import { Anchor, ChevronLeft, ChevronRight } from "lucide-react";
 
 const HeroSection = () => {
