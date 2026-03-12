@@ -22,9 +22,9 @@ const HeroSection = () => {
           
         </div>
         <div className="hidden md:block" />
-        <button className="border border-primary px-6 py-2 font-body text-sm uppercase tracking-[0.15em] text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
-          Poptávka
-        </button>
+        
+
+        
       </nav>
 
       {/* Breadcrumb */}
@@ -36,11 +36,11 @@ const HeroSection = () => {
 
       {/* Hero content */}
       <div className="absolute bottom-0 left-0 right-0 z-10 px-8 pb-24 text-center">
-        <p className="mb-2 font-body text-sm uppercase tracking-[0.25em] text-primary">
-          Na prodej
+        <p className="mb-2 font-body uppercase tracking-[0.25em] text-primary text-6xl">
+          FOR SALE 
         </p>
-        <h1 className="mb-3 font-display text-5xl font-medium tracking-wide text-foreground md:text-7xl">
-          OCEANIC DREAM
+        <h1 className="mb-3 font-display text-5xl font-medium tracking-wide text-foreground md:text-9xl">
+          BARON TRENK 
         </h1>
         <p className="font-display text-lg italic text-muted-foreground">
           Shipworks Brisbane
