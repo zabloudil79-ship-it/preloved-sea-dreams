@@ -16,10 +16,6 @@ const HeroSection = () => {
       {/* Top nav bar */}
       <nav className="relative z-10 flex items-center justify-between px-8 py-6">
         <div className="flex items-center gap-3">
-          <Anchor className="h-6 w-6 text-primary" />
-          
-
-          
         </div>
         <div className="hidden md:block" />
         
