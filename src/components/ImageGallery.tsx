@@ -11,6 +11,16 @@ import gallery8 from "@/assets/gallery-8.webp";
 import gallery9 from "@/assets/gallery-9.webp";
 import gallery10 from "@/assets/gallery-10.webp";
 import gallery11 from "@/assets/gallery-11.webp";
+import gallery12 from "@/assets/gallery-12.webp";
+import gallery13 from "@/assets/gallery-13.webp";
+import gallery14 from "@/assets/gallery-14.webp";
+import gallery15 from "@/assets/gallery-15.webp";
+import gallery16 from "@/assets/gallery-16.webp";
+import gallery17 from "@/assets/gallery-17.webp";
+import gallery18 from "@/assets/gallery-18.webp";
+import gallery19 from "@/assets/gallery-19.webp";
+import gallery20 from "@/assets/gallery-20.webp";
+import gallery21 from "@/assets/gallery-21.webp";
 
 const images = [
   { src: gallery1, alt: "Baron Trenck – boční pohled" },
@@ -24,6 +34,16 @@ const images = [
   { src: gallery9, alt: "Vířivka – detail" },
   { src: gallery10, alt: "Hlavní salon" },
   { src: gallery11, alt: "Salon – boční pohled" },
+  { src: gallery12, alt: "Salon s barem" },
+  { src: gallery13, alt: "Jídelna" },
+  { src: gallery14, alt: "Master kabina" },
+  { src: gallery15, alt: "Sky lounge" },
+  { src: gallery16, alt: "Sky lounge – TV" },
+  { src: gallery17, alt: "VIP salon" },
+  { src: gallery18, alt: "VIP kabina" },
+  { src: gallery19, alt: "Master suite" },
+  { src: gallery20, alt: "Master suite – detail" },
+  { src: gallery21, alt: "Hostovská kabina" },
 ];
 
 const ImageGallery = () => {
@@ -59,7 +79,6 @@ const ImageGallery = () => {
               Klikněte pro zobrazení galerie
             </span>
           </div>
-          {/* Thumbnail nav arrows */}
           <button
             onClick={(e) => { e.stopPropagation(); goTo(currentIndex - 1); }}
             className="absolute left-4 top-1/2 -translate-y-1/2 bg-background/60 p-2 text-foreground transition-colors hover:bg-background/80"
@@ -72,7 +91,6 @@ const ImageGallery = () => {
           >
             <ChevronRight className="h-6 w-6" />
           </button>
-          {/* Counter */}
           <div className="absolute bottom-4 right-4 bg-background/60 px-3 py-1 font-body text-sm text-foreground">
             {currentIndex + 1} / {images.length}
           </div>
