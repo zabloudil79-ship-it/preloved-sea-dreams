@@ -4,7 +4,7 @@ const specs = [
   { icon: Ruler, label: "Length", value: "44m / 144'" },
   { icon: Calendar, label: "Build/Refit", value: "2004 / 2015" },
   { icon: Users, label: "Guests", value: "12" },
-  { icon: BedDouble, label: "Cabins", value: "5" },
+  { icon: BedDouble, label: "Cabins", value: "6" },
   { icon: UserCog, label: "Crew", value: "9" },
   { icon: Flag, label: "Flag", value: "Malta" },
   { icon: Receipt, label: "VAT", value: "Not Paid" },
