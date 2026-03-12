@@ -36,6 +36,19 @@ const specGroups = [
       { label: "Motory", value: "2× Caterpillar (900 hp)" },
     ],
   },
+  {
+    title: "Objemy & Tanky",
+    specs: [
+      { label: "Cestovní rychlost", value: "12 uzlů" },
+      { label: "Spotřeba (ECO)", value: "~ 100 l/h" },
+      { label: "Palivo", value: "283 905 l" },
+      { label: "Šedá voda", value: "18 927 l" },
+      { label: "Černá voda", value: "18 927 l" },
+      { label: "Pitná voda", value: "37 854 l" },
+      { label: "Výtlak", value: "N/A" },
+      { label: "Stabilizační systém", value: "Fin Stabilizers" },
+    ],
+  },
 ];
 
 const Specifications = () => {
