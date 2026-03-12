@@ -21,6 +21,14 @@ import gallery18 from "@/assets/gallery-18.webp";
 import gallery19 from "@/assets/gallery-19.webp";
 import gallery20 from "@/assets/gallery-20.webp";
 import gallery21 from "@/assets/gallery-21.webp";
+import gallery22 from "@/assets/gallery-22.webp";
+import gallery23 from "@/assets/gallery-23.webp";
+import gallery24 from "@/assets/gallery-24.webp";
+import gallery25 from "@/assets/gallery-25.webp";
+import gallery26 from "@/assets/gallery-26.webp";
+import gallery27 from "@/assets/gallery-27.webp";
+import gallery28 from "@/assets/gallery-28.webp";
+import gallery29 from "@/assets/gallery-29.webp";
 
 const images = [
   { src: gallery1, alt: "Baron Trenck – boční pohled" },
@@ -44,6 +52,14 @@ const images = [
   { src: gallery19, alt: "Master suite" },
   { src: gallery20, alt: "Master suite – detail" },
   { src: gallery21, alt: "Hostovská kabina" },
+  { src: gallery22, alt: "Twin kabina" },
+  { src: gallery23, alt: "VIP kabina – detail" },
+  { src: gallery24, alt: "Twin kabina 2" },
+  { src: gallery25, alt: "Twin kabina 3" },
+  { src: gallery26, alt: "Koupelna" },
+  { src: gallery27, alt: "Hostovská kabina 2" },
+  { src: gallery28, alt: "Kapitánský můstek" },
+  { src: gallery29, alt: "Kuchyně" },
 ];
 
 const ImageGallery = () => {
