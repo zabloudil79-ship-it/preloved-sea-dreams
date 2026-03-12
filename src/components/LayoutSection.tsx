@@ -1,6 +1,7 @@
 import { useState } from "react";
 import sundeckImg from "@/assets/sundeck.jpg";
 import upperDeckImg from "@/assets/upperdeck.jpg";
+import lowerDeckImg from "@/assets/lowerdeck.jpg";
 
 const decks = [
   { id: "sundeck", label: "Sundeck" },
@@ -13,7 +14,7 @@ const deckImages: Record<string, string | null> = {
   sundeck: sundeckImg,
   "upper-deck": upperDeckImg,
   "main-deck": null,
-  "lower-deck": null,
+  "lower-deck": lowerDeckImg,
 };
 
 const LayoutSection = () => {
