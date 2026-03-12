@@ -1,5 +1,6 @@
 import { useState } from "react";
 import sundeckImg from "@/assets/sundeck.jpg";
+import upperDeckImg from "@/assets/upperdeck.jpg";
 
 const decks = [
   { id: "sundeck", label: "Sundeck" },
@@ -10,7 +11,7 @@ const decks = [
 
 const deckImages: Record<string, string | null> = {
   sundeck: sundeckImg,
-  "upper-deck": null,
+  "upper-deck": upperDeckImg,
   "main-deck": null,
   "lower-deck": null,
 };
