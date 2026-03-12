@@ -1,4 +1,4 @@
-import { Ruler, Calendar, Users, BedDouble, UserCog, DollarSign } from "lucide-react";
+import { Ruler, Calendar, Users, BedDouble, UserCog } from "lucide-react";
 
 const specs = [
   { icon: Ruler, label: "Délka", value: "44m / 144'" },
@@ -6,7 +6,6 @@ const specs = [
   { icon: Users, label: "Hosté", value: "12" },
   { icon: BedDouble, label: "Kabiny", value: "5" },
   { icon: UserCog, label: "Posádka", value: "9" },
-  { icon: DollarSign, label: "Cena", value: "€5 950 000" },
 ];
 
 const QuickSpecs = () => {
