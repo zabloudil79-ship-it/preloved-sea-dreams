@@ -19,15 +19,15 @@ const ContactSection = () => {
         <div className="mb-12 flex flex-col items-center justify-center gap-8 md:flex-row md:gap-16">
           <div className="flex items-center gap-3">
             <Phone className="h-5 w-5 text-primary" />
-            <span className="font-body text-foreground">+420 123 456 789</span>
+            <span className="font-body text-foreground">+420 775 799901 </span>
           </div>
           <div className="flex items-center gap-3">
             <Mail className="h-5 w-5 text-primary" />
-            <span className="font-body text-foreground">info@prestigeyachts.cz</span>
+            <span className="font-body text-foreground">info@yachtprofessional.cz</span>
           </div>
           <div className="flex items-center gap-3">
             <MapPin className="h-5 w-5 text-primary" />
-            <span className="font-body text-foreground">Monaco</span>
+            <span className="font-body text-foreground">Italy</span>
           </div>
         </div>
 
@@ -35,8 +35,8 @@ const ContactSection = () => {
           Stáhnout brožuru
         </button>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default ContactSection;
