@@ -17,6 +17,7 @@ const Index = () => {
       <YachtDescription />
       <ImageGallery />
       <Specifications />
+      <LayoutSection />
       <ContactSection />
       <Footer />
     </div>
