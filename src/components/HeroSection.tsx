@@ -21,13 +21,7 @@ const HeroSection = () => {
             PRESTIGE YACHTS
           </span>
         </div>
-        <div className="hidden gap-8 font-body text-sm uppercase tracking-[0.15em] text-foreground/80 md:flex">
-          <a href="#" className="transition-colors hover:text-primary">Koupit</a>
-          <a href="#" className="transition-colors hover:text-primary">Prodat</a>
-          <a href="#" className="transition-colors hover:text-primary">Charter</a>
-          <a href="#" className="transition-colors hover:text-primary">O nás</a>
-          <a href="#" className="transition-colors hover:text-primary">Kontakt</a>
-        </div>
+        <div className="hidden md:block" />
         <button className="border border-primary px-6 py-2 font-body text-sm uppercase tracking-[0.15em] text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
           Poptávka
         </button>
