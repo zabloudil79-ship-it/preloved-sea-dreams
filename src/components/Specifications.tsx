@@ -23,20 +23,20 @@ const specGroups = [
   {
     title: "Dimensions",
     specs: [
-      { label: "Length", value: "44m (144')" },
-      { label: "Beam", value: "8.53m (28')" },
-      { label: "Draft", value: "2.24m (7'4\")" },
-      { label: "Gross Tonnage", value: "457 GT" },
+      { label: "Length", value: "43.5 m" },
+      { label: "Beam", value: "8.1 m (28')" },
+      { label: "Draft", value: "3.1 m" },
+      { label: "Gross Tonnage", value: "498 GT" },
     ],
   },
   {
     title: "Performance & Engines",
     specs: [
-      { label: "Cruising Speed", value: "13 knots" },
+      { label: "Cruising Speed", value: "12 knots" },
       { label: "Max Speed", value: "16 knots" },
       { label: "Fuel Consumption", value: "100 l/h (ECO 10 knots)" },
       { label: "Range", value: "11 600 nm" },
-      { label: "Engines", value: "2× Caterpillar (900 hp)" },
+      { label: "Engines", value: "2× CAT 32 1450 hp" },
     ],
   },
   {
