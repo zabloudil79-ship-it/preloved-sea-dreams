@@ -1,4 +1,4 @@
-import { Ruler, Calendar, Users, BedDouble, UserCog } from "lucide-react";
+import { Ruler, Calendar, Users, BedDouble, UserCog, Flag, Receipt } from "lucide-react";
 
 const specs = [
   { icon: Ruler, label: "Délka", value: "44m / 144'" },
@@ -6,12 +6,14 @@ const specs = [
   { icon: Users, label: "Hosté", value: "12" },
   { icon: BedDouble, label: "Kabiny", value: "5" },
   { icon: UserCog, label: "Posádka", value: "9" },
+  { icon: Flag, label: "Vlajka", value: "Malta" },
+  { icon: Receipt, label: "VAT", value: "Not Paid" },
 ];
 
 const QuickSpecs = () => {
   return (
     <section className="bg-card py-12">
-      <div className="mx-auto grid max-w-5xl grid-cols-2 gap-8 px-8 md:grid-cols-5">
+      <div className="mx-auto grid max-w-5xl grid-cols-2 gap-8 px-8 md:grid-cols-7">
         {specs.map((spec) => (
           <div key={spec.label} className="text-center">
             <spec.icon className="mx-auto mb-3 h-5 w-5 text-primary" />
