@@ -6,6 +6,7 @@ const specGroups = [
       { label: "Cabins", value: "6" },
       { label: "Configuration", value: "Double (4), Twin (2)" },
       { label: "Crew", value: "9" },
+      { label: "Crew Cabins", value: "4" },
     ],
   },
   {
