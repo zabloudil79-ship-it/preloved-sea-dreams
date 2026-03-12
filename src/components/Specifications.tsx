@@ -35,7 +35,7 @@ const specGroups = [
       { label: "Cruising Speed", value: "13 knots" },
       { label: "Max Speed", value: "16 knots" },
       { label: "Fuel Consumption", value: "100 l/h (ECO 10 knots)" },
-      { label: "Range", value: "6,000 nm" },
+      { label: "Range", value: "11 600 nm" },
       { label: "Engines", value: "2× Caterpillar (900 hp)" },
     ],
   },
