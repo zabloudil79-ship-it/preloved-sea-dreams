@@ -2,7 +2,7 @@ import { Ruler, Calendar, Users, BedDouble, UserCog, Flag, Receipt } from "lucid
 
 const specs = [
   { icon: Ruler, label: "Délka", value: "44m / 144'" },
-  { icon: Calendar, label: "Stavba / Refit", value: "2004 / 2015" },
+  { icon: Calendar, label: "Stavba/Refit", value: "2004 / 2015" },
   { icon: Users, label: "Hosté", value: "12" },
   { icon: BedDouble, label: "Kabiny", value: "5" },
   { icon: UserCog, label: "Posádka", value: "9" },
