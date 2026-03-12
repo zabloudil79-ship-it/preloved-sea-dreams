@@ -27,7 +27,7 @@ const YachtDescription = () => {
             Elegant accommodation for 10 guests
           </h3>
           <p>
-            BARON TRENK offers luxurious accommodation for up to 10 guests in five beautifully appointed staterooms.
+            BARON TRENK offers luxurious accommodation for up to 12 guests in five beautifully appointed staterooms.
           </p>
           <p>
             The impressive full-beam Master Suite is located on the main deck and benefits from large oval windows offering stunning ocean views. The suite also features a private office, spacious walk-in wardrobe and separate his-and-hers bathrooms, creating an exceptional private retreat for the owner.
@@ -71,8 +71,8 @@ const YachtDescription = () => {
           </ul>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default YachtDescription;
