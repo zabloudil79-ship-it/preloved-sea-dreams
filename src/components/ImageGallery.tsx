@@ -1,7 +1,7 @@
 import interiorImg from "@/assets/yacht-interior.jpg";
 import deckImg from "@/assets/yacht-deck.jpg";
 import cabinImg from "@/assets/yacht-cabin.jpg";
-import heroImg from "@/assets/yacht-hero.jpg";
+import heroImg from "@/assets/yacht-hero.webp";
 
 const images = [
   { src: heroImg, alt: "Letecký pohled na jachtu", span: "md:col-span-2 md:row-span-2" },
