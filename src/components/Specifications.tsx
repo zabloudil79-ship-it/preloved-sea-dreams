@@ -23,9 +23,9 @@ const specGroups = [
   {
     title: "Dimensions",
     specs: [
-      { label: "Length", value: "43.5 m" },
-      { label: "Beam", value: "8.1 m (28')" },
-      { label: "Draft", value: "3.1 m" },
+      { label: "Length", value: "43.50 m / 142.7 ft" },
+      { label: "Beam", value: "8.20 m / 26.9 ft" },
+      { label: "Draft", value: "3.1 m / 10.7 ft" },
       { label: "Gross Tonnage", value: "498 GT" },
     ],
   },
