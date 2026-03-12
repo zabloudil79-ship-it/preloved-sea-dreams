@@ -1,4 +1,5 @@
 import HeroSection from "@/components/HeroSection";
+import PriceBanner from "@/components/PriceBanner";
 import QuickSpecs from "@/components/QuickSpecs";
 import YachtDescription from "@/components/YachtDescription";
 import ImageGallery from "@/components/ImageGallery";
@@ -10,6 +11,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <HeroSection />
+      <PriceBanner />
       <QuickSpecs />
       <YachtDescription />
       <ImageGallery />
