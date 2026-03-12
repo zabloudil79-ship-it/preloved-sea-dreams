@@ -1,12 +1,12 @@
 import { Ruler, Calendar, Users, BedDouble, UserCog, Flag, Receipt } from "lucide-react";
 
 const specs = [
-  { icon: Ruler, label: "Délka", value: "44m / 144'" },
-  { icon: Calendar, label: "Stavba/Refit", value: "2004 / 2015" },
-  { icon: Users, label: "Hosté", value: "12" },
-  { icon: BedDouble, label: "Kabiny", value: "5" },
-  { icon: UserCog, label: "Posádka", value: "9" },
-  { icon: Flag, label: "Vlajka", value: "Malta" },
+  { icon: Ruler, label: "Length", value: "44m / 144'" },
+  { icon: Calendar, label: "Build/Refit", value: "2004 / 2015" },
+  { icon: Users, label: "Guests", value: "12" },
+  { icon: BedDouble, label: "Cabins", value: "5" },
+  { icon: UserCog, label: "Crew", value: "9" },
+  { icon: Flag, label: "Flag", value: "Malta" },
   { icon: Receipt, label: "VAT", value: "Not Paid" },
 ];
 
@@ -24,7 +24,7 @@ const QuickSpecs = () => {
       </div>
       <div className="mx-auto mt-10 flex max-w-6xl justify-center px-8">
         <button className="bg-primary px-8 py-3 font-body text-sm uppercase tracking-[0.15em] text-primary-foreground transition-opacity hover:opacity-90">
-          Stáhnout brožuru
+          Download Brochure
         </button>
       </div>
     </section>

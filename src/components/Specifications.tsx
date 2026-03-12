@@ -1,52 +1,52 @@
 const specGroups = [
   {
-    title: "Ubytování",
+    title: "Accommodation",
     specs: [
-      { label: "Hosté", value: "9" },
-      { label: "Kabiny", value: "5" },
-      { label: "Konfigurace", value: "Double (4), Twin (1)" },
-      { label: "Posádka", value: "9" },
+      { label: "Guests", value: "9" },
+      { label: "Cabins", value: "5" },
+      { label: "Configuration", value: "Double (4), Twin (1)" },
+      { label: "Crew", value: "9" },
     ],
   },
   {
-    title: "Konstrukce & Design",
+    title: "Construction & Design",
     specs: [
-      { label: "Stavba / Refit", value: "2004 / 2015" },
-      { label: "Loděnice", value: "Shipworks Brisbane" },
-      { label: "Materiál trupu", value: "Hliník" },
-      { label: "Exteriér / Interiér", value: "Bernie Cohen" },
-      { label: "Vlajka", value: "Malta" },
+      { label: "Build / Refit", value: "2004 / 2015" },
+      { label: "Shipyard", value: "Shipworks Brisbane" },
+      { label: "Hull Material", value: "Aluminium" },
+      { label: "Exterior / Interior", value: "Bernie Cohen" },
+      { label: "Flag", value: "Malta" },
       { label: "VAT", value: "Not Paid" },
     ],
   },
   {
-    title: "Rozměry",
+    title: "Dimensions",
     specs: [
-      { label: "Délka", value: "44m (144')" },
-      { label: "Šířka", value: "8,53m (28')" },
-      { label: "Ponor", value: "2,24m (7'4\")" },
-      { label: "Hrubá tonáž", value: "457 GT" },
+      { label: "Length", value: "44m (144')" },
+      { label: "Beam", value: "8.53m (28')" },
+      { label: "Draft", value: "2.24m (7'4\")" },
+      { label: "Gross Tonnage", value: "457 GT" },
     ],
   },
   {
-    title: "Výkon & Motory",
+    title: "Performance & Engines",
     specs: [
-      { label: "Cestovní rychlost", value: "13 uzlů" },
-      { label: "Max. rychlost", value: "16 uzlů" },
-      { label: "Spotřeba paliva", value: "100 l/h (ECO 10 uzlů)" },
-      { label: "Dojezd", value: "6 000 nm" },
-      { label: "Motory", value: "2× Caterpillar (900 hp)" },
+      { label: "Cruising Speed", value: "13 knots" },
+      { label: "Max Speed", value: "16 knots" },
+      { label: "Fuel Consumption", value: "100 l/h (ECO 10 knots)" },
+      { label: "Range", value: "6,000 nm" },
+      { label: "Engines", value: "2× Caterpillar (900 hp)" },
     ],
   },
   {
-    title: "Objemy & Tanky",
+    title: "Capacities & Tanks",
     specs: [
-      { label: "Spotřeba (ECO)", value: "~ 100 l/h" },
-      { label: "Palivo", value: "283 905 l" },
-      { label: "Šedá voda", value: "18 927 l" },
-      { label: "Černá voda", value: "18 927 l" },
-      { label: "Pitná voda", value: "37 854 l" },
-      { label: "Stabilizační systém", value: "Fin Stabilizers" },
+      { label: "Consumption (ECO)", value: "~ 100 l/h" },
+      { label: "Fuel", value: "283,905 l" },
+      { label: "Grey Water", value: "18,927 l" },
+      { label: "Black Water", value: "18,927 l" },
+      { label: "Fresh Water", value: "37,854 l" },
+      { label: "Stabilisation System", value: "Fin Stabilizers" },
     ],
   },
 ];
@@ -57,10 +57,10 @@ const Specifications = () => {
       <div className="mx-auto max-w-6xl px-8">
         <div className="mb-12 text-center">
           <p className="mb-2 font-body text-sm uppercase tracking-[0.25em] text-primary">
-            Technické údaje
+            Technical Data
           </p>
           <h2 className="font-display text-4xl font-medium text-foreground">
-            Specifikace
+            Specifications
           </h2>
           <div className="mx-auto mt-4 h-[2px] w-16 bg-primary" />
         </div>

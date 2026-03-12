@@ -31,35 +31,35 @@ import gallery28 from "@/assets/gallery-28.webp";
 import gallery29 from "@/assets/gallery-29.webp";
 
 const images = [
-  { src: gallery1, alt: "Baron Trenck – boční pohled" },
-  { src: gallery2, alt: "Baron Trenck – boční pohled 2" },
-  { src: gallery3, alt: "Baron Trenck – příďový pohled" },
-  { src: gallery4, alt: "Baron Trenck – záďový pohled" },
-  { src: gallery5, alt: "Sluneční paluba s vířivkou" },
-  { src: gallery6, alt: "Venkovní lounge" },
-  { src: gallery7, alt: "Sundeck s vířivkou a lehátky" },
+  { src: gallery1, alt: "Baron Trenck – side view" },
+  { src: gallery2, alt: "Baron Trenck – side view 2" },
+  { src: gallery3, alt: "Baron Trenck – bow view" },
+  { src: gallery4, alt: "Baron Trenck – stern view" },
+  { src: gallery5, alt: "Sundeck with jacuzzi" },
+  { src: gallery6, alt: "Outdoor lounge" },
+  { src: gallery7, alt: "Sundeck with jacuzzi and sunbeds" },
   { src: gallery8, alt: "Alfresco dining" },
-  { src: gallery9, alt: "Vířivka – detail" },
-  { src: gallery10, alt: "Hlavní salon" },
-  { src: gallery11, alt: "Salon – boční pohled" },
-  { src: gallery12, alt: "Salon s barem" },
-  { src: gallery13, alt: "Jídelna" },
-  { src: gallery14, alt: "Master kabina" },
+  { src: gallery9, alt: "Jacuzzi – detail" },
+  { src: gallery10, alt: "Main salon" },
+  { src: gallery11, alt: "Salon – side view" },
+  { src: gallery12, alt: "Salon with bar" },
+  { src: gallery13, alt: "Dining room" },
+  { src: gallery14, alt: "Master cabin" },
   { src: gallery15, alt: "Sky lounge" },
   { src: gallery16, alt: "Sky lounge – TV" },
   { src: gallery17, alt: "VIP salon" },
-  { src: gallery18, alt: "VIP kabina" },
+  { src: gallery18, alt: "VIP cabin" },
   { src: gallery19, alt: "Master suite" },
   { src: gallery20, alt: "Master suite – detail" },
-  { src: gallery21, alt: "Hostovská kabina" },
-  { src: gallery22, alt: "Twin kabina" },
-  { src: gallery23, alt: "VIP kabina – detail" },
-  { src: gallery24, alt: "Twin kabina 2" },
-  { src: gallery25, alt: "Twin kabina 3" },
-  { src: gallery26, alt: "Koupelna" },
-  { src: gallery27, alt: "Hostovská kabina 2" },
-  { src: gallery28, alt: "Kapitánský můstek" },
-  { src: gallery29, alt: "Kuchyně" },
+  { src: gallery21, alt: "Guest cabin" },
+  { src: gallery22, alt: "Twin cabin" },
+  { src: gallery23, alt: "VIP cabin – detail" },
+  { src: gallery24, alt: "Twin cabin 2" },
+  { src: gallery25, alt: "Twin cabin 3" },
+  { src: gallery26, alt: "Bathroom" },
+  { src: gallery27, alt: "Guest cabin 2" },
+  { src: gallery28, alt: "Bridge" },
+  { src: gallery29, alt: "Galley" },
 ];
 
 const ImageGallery = () => {
@@ -75,10 +75,10 @@ const ImageGallery = () => {
       <div className="mx-auto max-w-6xl px-8">
         <div className="mb-10 text-center">
           <p className="mb-2 font-body text-sm uppercase tracking-[0.25em] text-primary">
-            Prohlídka
+            Tour
           </p>
           <h2 className="font-display text-4xl font-medium text-foreground">
-            Galerie
+            Gallery
           </h2>
           <div className="mx-auto mt-4 h-[2px] w-16 bg-primary" />
         </div>
@@ -92,7 +92,7 @@ const ImageGallery = () => {
           />
           <div className="absolute inset-0 flex items-center justify-center bg-background/0 transition-colors duration-300 group-hover:bg-background/30">
             <span className="font-body text-sm uppercase tracking-[0.2em] text-foreground opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-              Klikněte pro zobrazení galerie
+              Click to view gallery
             </span>
           </div>
           <button

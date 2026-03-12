@@ -46,11 +46,11 @@ const HeroSection = () => {
       {/* Bottom navigation */}
       <div className="absolute bottom-0 left-0 right-0 z-10 flex items-center justify-center border-t border-foreground/10 px-8 py-4">
         <div className="hidden gap-8 font-body text-sm uppercase tracking-[0.15em] text-foreground/70 md:flex">
-          <a href="#popis" className="transition-colors hover:text-primary">Popis</a>
+          <a href="#popis" className="transition-colors hover:text-primary">Description</a>
           <span className="text-foreground/20">|</span>
-          <a href="#specifikace" className="transition-colors hover:text-primary">Specifikace</a>
+          <a href="#specifikace" className="transition-colors hover:text-primary">Specifications</a>
           <span className="text-foreground/20">|</span>
-          <a href="#galerie" className="transition-colors hover:text-primary">Galerie</a>
+          <a href="#galerie" className="transition-colors hover:text-primary">Gallery</a>
           <span className="text-foreground/20">|</span>
           <a href="#layout" className="transition-colors hover:text-primary">Layout</a>
         </div>

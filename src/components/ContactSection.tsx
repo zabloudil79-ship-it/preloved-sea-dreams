@@ -5,15 +5,15 @@ const ContactSection = () => {
     <section className="bg-card py-20">
       <div className="mx-auto max-w-4xl px-8 text-center">
         <p className="mb-2 font-body text-sm uppercase tracking-[0.25em] text-primary">
-          Máte zájem?
+          Interested?
         </p>
         <h2 className="mb-4 font-display text-4xl font-medium text-foreground">
-          Kontaktujte nás
+          Contact Us
         </h2>
         <div className="mx-auto mb-10 h-[2px] w-16 bg-primary" />
         <p className="mx-auto mb-12 max-w-2xl font-body text-muted-foreground">
-          Náš tým specialistů je připraven vám pomoci s prohlídkou, podrobnostmi 
-          o stavu jachty nebo organizací zkušební plavby.
+          Our team of specialists is ready to assist you with a viewing, detailed 
+          condition reports or arranging a sea trial.
         </p>
 
         <div className="mb-12 flex flex-col items-center justify-center gap-8 md:flex-row md:gap-16">
@@ -32,11 +32,11 @@ const ContactSection = () => {
         </div>
 
         <button className="bg-primary px-12 py-4 font-body text-sm uppercase tracking-[0.2em] text-primary-foreground transition-opacity hover:opacity-90">
-          Stáhnout brožuru
+          Download Brochure
         </button>
       </div>
-    </section>);
-
+    </section>
+  );
 };
 
 export default ContactSection;
