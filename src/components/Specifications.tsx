@@ -32,7 +32,7 @@ const specGroups = [
   {
     title: "Performance & Engines",
     specs: [
-      { label: "Cruising Speed", value: "13 knots" },
+      { label: "Cruising Speed", value: "12 knots" },
       { label: "Max Speed", value: "16 knots" },
       { label: "Fuel Consumption", value: "100 l/h (ECO 10 knots)" },
       { label: "Range", value: "11 600 nm" },
