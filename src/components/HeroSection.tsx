@@ -42,7 +42,7 @@ const HeroSection = () => {
         <div className="mb-4 -mx-8">
           <PriceBanner />
         </div>
-        <p className="font-display text-lg italic text-muted-foreground">
+        <p className="font-display italic text-primary text-2xl">
           Built to explore the world in uncompromising luxury.
         </p>
       </div>
