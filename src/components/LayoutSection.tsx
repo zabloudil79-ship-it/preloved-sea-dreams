@@ -1,4 +1,5 @@
 import { useState } from "react";
+import sundeckImg from "@/assets/sundeck.jpg";
 
 const decks = [
   { id: "sundeck", label: "Sundeck" },
@@ -7,9 +8,8 @@ const decks = [
   { id: "lower-deck", label: "Lower Deck" },
 ];
 
-// Placeholder images – replace with actual deck plan imports
 const deckImages: Record<string, string | null> = {
-  sundeck: null,
+  sundeck: sundeckImg,
   "upper-deck": null,
   "main-deck": null,
   "lower-deck": null,
