@@ -55,8 +55,18 @@ The impressive full-beam Master Suite is located on the main deck and benefits f
 
 
 The lower deck hosts a generous full-beam VIP suite, one double cabin and one twin cabin. An additional guest cabin located on the bridge deck can also be used as a massage or wellness treatment room, offering additional flexibility for guests.
-          
-
+          </p>
+          <p>
+            
+          </p>
+          <p>
+            
+          </p>
+          <p>
+            
+          </p>
+          <p>
+            
           </p>
         </div>
       </div>
