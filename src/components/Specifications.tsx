@@ -31,6 +31,7 @@ const specGroups = [
     specs: [
       { label: "Cestovní rychlost", value: "13 uzlů" },
       { label: "Max. rychlost", value: "16 uzlů" },
+      { label: "Spotřeba paliva", value: "100 l/h (ECO 10 uzlů)" },
       { label: "Dojezd", value: "6 000 nm" },
       { label: "Motory", value: "2× Caterpillar (900 hp)" },
     ],
