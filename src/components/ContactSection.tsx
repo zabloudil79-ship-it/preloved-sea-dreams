@@ -1,0 +1,42 @@
+import { Mail, Phone, MapPin } from "lucide-react";
+
+const ContactSection = () => {
+  return (
+    <section className="bg-card py-20">
+      <div className="mx-auto max-w-4xl px-8 text-center">
+        <p className="mb-2 font-body text-sm uppercase tracking-[0.25em] text-primary">
+          Máte zájem?
+        </p>
+        <h2 className="mb-4 font-display text-4xl font-medium text-foreground">
+          Kontaktujte nás
+        </h2>
+        <div className="mx-auto mb-10 h-[2px] w-16 bg-primary" />
+        <p className="mx-auto mb-12 max-w-2xl font-body text-muted-foreground">
+          Náš tým specialistů je připraven vám pomoci s prohlídkou, podrobnostmi 
+          o stavu jachty nebo organizací zkušební plavby.
+        </p>
+
+        <div className="mb-12 flex flex-col items-center justify-center gap-8 md:flex-row md:gap-16">
+          <div className="flex items-center gap-3">
+            <Phone className="h-5 w-5 text-primary" />
+            <span className="font-body text-foreground">+420 123 456 789</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <Mail className="h-5 w-5 text-primary" />
+            <span className="font-body text-foreground">info@prestigeyachts.cz</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <MapPin className="h-5 w-5 text-primary" />
+            <span className="font-body text-foreground">Monaco</span>
+          </div>
+        </div>
+
+        <button className="bg-primary px-12 py-4 font-body text-sm uppercase tracking-[0.2em] text-primary-foreground transition-opacity hover:opacity-90">
+          Poslat poptávku
+        </button>
+      </div>
+    </section>
+  );
+};
+
+export default ContactSection;
