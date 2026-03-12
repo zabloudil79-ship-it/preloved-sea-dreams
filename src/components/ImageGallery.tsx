@@ -75,7 +75,7 @@ const ImageGallery = () => {
       <div className="mx-auto max-w-6xl px-8">
         <div className="mb-10 text-center">
           <p className="mb-2 font-body text-sm uppercase tracking-[0.25em] text-primary">
-            Prohlídka
+            Tour
           </p>
           <h2 className="font-display text-4xl font-medium text-foreground">
             Galerie
