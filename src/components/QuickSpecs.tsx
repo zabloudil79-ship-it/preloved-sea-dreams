@@ -21,11 +21,8 @@ const QuickSpecs = () => {
           </div>
         ))}
       </div>
-      <div className="mx-auto mt-10 flex max-w-6xl justify-center gap-4 px-8">
+      <div className="mx-auto mt-10 flex max-w-6xl justify-center px-8">
         <button className="bg-primary px-8 py-3 font-body text-sm uppercase tracking-[0.15em] text-primary-foreground transition-opacity hover:opacity-90">
-          Poslat poptávku
-        </button>
-        <button className="border border-border px-8 py-3 font-body text-sm uppercase tracking-[0.15em] text-foreground transition-colors hover:border-primary hover:text-primary">
           Stáhnout brožuru
         </button>
       </div>

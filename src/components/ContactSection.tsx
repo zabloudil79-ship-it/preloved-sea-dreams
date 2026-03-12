@@ -32,7 +32,7 @@ const ContactSection = () => {
         </div>
 
         <button className="bg-primary px-12 py-4 font-body text-sm uppercase tracking-[0.2em] text-primary-foreground transition-opacity hover:opacity-90">
-          Poslat poptávku
+          Stáhnout brožuru
         </button>
       </div>
     </section>
