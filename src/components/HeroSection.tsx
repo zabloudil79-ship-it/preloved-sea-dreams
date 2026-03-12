@@ -39,7 +39,7 @@ const HeroSection = () => {
         <h1 className="mb-3 font-display text-5xl font-medium tracking-wide text-foreground md:text-9xl">
           BARON TRENK 
         </h1>
-        <div className="mb-4">
+        <div className="mb-4 -mx-8">
           <PriceBanner />
         </div>
         <p className="font-display text-lg italic text-muted-foreground">
