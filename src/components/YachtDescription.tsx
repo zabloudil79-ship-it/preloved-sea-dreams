@@ -24,7 +24,7 @@ const YachtDescription = () => {
           </p>
 
           <h3 className="pt-4 font-display text-2xl font-medium text-foreground">
-            Elegant accommodation for 10 guests
+            Elegant accommodation for 12 guests
           </h3>
           <p>
             BARON TRENK offers luxurious accommodation for up to 12 guests in five beautifully appointed staterooms.
