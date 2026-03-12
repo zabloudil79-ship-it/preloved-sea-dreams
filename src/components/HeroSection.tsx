@@ -55,6 +55,8 @@ const HeroSection = () => {
           <a href="#specifikace" className="transition-colors hover:text-primary">Specifikace</a>
           <span className="text-foreground/20">|</span>
           <a href="#galerie" className="transition-colors hover:text-primary">Galerie</a>
+          <span className="text-foreground/20">|</span>
+          <a href="#layout" className="transition-colors hover:text-primary">Layout</a>
         </div>
       </div>
     </section>);
