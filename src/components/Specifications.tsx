@@ -17,6 +17,7 @@ const specGroups = [
       { label: "Exteriér / Interiér", value: "Bernie Cohen" },
       { label: "Vlajka", value: "Malta" },
       { label: "VAT", value: "Not Paid" },
+    ],
   },
   {
     title: "Rozměry",
