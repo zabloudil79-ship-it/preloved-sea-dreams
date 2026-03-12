@@ -33,7 +33,7 @@ const YachtDescription = () => {
             The impressive full-beam Master Suite is located on the main deck and benefits from large oval windows offering stunning ocean views. The suite also features a private office, spacious walk-in wardrobe and separate his-and-hers bathrooms, creating an exceptional private retreat for the owner.
           </p>
           <p>
-            The lower deck hosts a generous full-beam VIP suite, one double cabin and one twin cabin. An additional guest cabin located on the bridge deck can also be used as a massage or wellness treatment room, offering additional flexibility for guests.
+            The lower deck hosts a generous full-beam VIP suite, one double cabin and one twin cabin. An additional 2 guests cabin located on the bridge deck can also be used as a massage or wellness treatment room, offering additional flexibility for guests.
           </p>
           <p>
             Accommodation for up to nine crew members ensures seamless service and a relaxed luxury experience on board.
