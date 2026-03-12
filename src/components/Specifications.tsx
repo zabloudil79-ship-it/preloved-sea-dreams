@@ -66,8 +66,15 @@ const Specifications = () => {
         </div>
 
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
-          {specGroups.map((group) => (
-            <div key={group.title} className="rounded-sm border border-border bg-card p-8">
+          {specGroups.map((group, index) => (
+            <div
+              key={group.title}
+              className={`rounded-sm border border-border bg-card p-8${
+                index === specGroups.length - 1 && specGroups.length % 2 !== 0
+                  ? " md:col-span-2 md:mx-auto md:max-w-[calc(50%-1.25rem)]"
+                  : ""
+              }`}
+            >
               <h3 className="mb-6 font-display text-xl text-foreground">{group.title}</h3>
               <div className="space-y-4">
                 {group.specs.map((spec) => (
