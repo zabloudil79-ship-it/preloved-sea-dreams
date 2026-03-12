@@ -92,7 +92,7 @@ const ImageGallery = () => {
           />
           <div className="absolute inset-0 flex items-center justify-center bg-background/0 transition-colors duration-300 group-hover:bg-background/30">
             <span className="font-body text-sm uppercase tracking-[0.2em] text-foreground opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-              Klikněte pro zobrazení galerie
+              Click to view gallery
             </span>
           </div>
           <button

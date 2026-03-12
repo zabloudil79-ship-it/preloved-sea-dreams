@@ -59,7 +59,7 @@ const LayoutSection = () => {
             />
           ) : (
             <p className="font-body text-muted-foreground">
-              Nahrajte obrázek pro {decks.find((d) => d.id === activeDeck)?.label}
+              Upload image for {decks.find((d) => d.id === activeDeck)?.label}
             </p>
           )}
         </div>
