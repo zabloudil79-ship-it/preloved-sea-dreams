@@ -8,8 +8,8 @@ const HeroSection = () => {
         <img
           src={heroImage}
           alt="M/Y OCEANIC DREAM - Luxury Motor Yacht"
-          className="h-full w-full object-cover"
-        />
+          className="h-full w-full object-cover" />
+        
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
       </div>
 
@@ -17,9 +17,9 @@ const HeroSection = () => {
       <nav className="relative z-10 flex items-center justify-between px-8 py-6">
         <div className="flex items-center gap-3">
           <Anchor className="h-6 w-6 text-primary" />
-          <span className="font-display text-xl tracking-[0.2em] text-foreground">
-            PRESTIGE YACHTS
-          </span>
+          
+
+          
         </div>
         <div className="hidden md:block" />
         <button className="border border-primary px-6 py-2 font-body text-sm uppercase tracking-[0.15em] text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
@@ -30,7 +30,7 @@ const HeroSection = () => {
       {/* Breadcrumb */}
       <div className="relative z-10 px-8 pt-2">
         <p className="font-body text-xs tracking-wide text-foreground/50">
-          Domů &gt; Jachty na prodej &gt; M/Y OCEANIC DREAM
+          ​
         </p>
       </div>
 
@@ -65,8 +65,8 @@ const HeroSection = () => {
           <ChevronRight className="h-4 w-4" />
         </button>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default HeroSection;
