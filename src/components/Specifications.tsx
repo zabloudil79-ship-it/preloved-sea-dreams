@@ -15,6 +15,8 @@ const specGroups = [
       { label: "Loděnice", value: "Shipworks Brisbane" },
       { label: "Materiál trupu", value: "Hliník" },
       { label: "Exteriér / Interiér", value: "Bernie Cohen" },
+      { label: "Vlajka", value: "Malta" },
+      { label: "VAT", value: "Not Paid" },
     ],
   },
   {
