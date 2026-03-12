@@ -46,7 +46,7 @@ const ContactSection = () => {
         </h2>
         <div className="mx-auto mb-10 h-[2px] w-16 bg-primary" />
         <p className="mx-auto mb-12 max-w-2xl font-body text-muted-foreground">
-          Our team of specialists is ready to assist you with a viewing or detailed condition reports.
+          We are ready to assist you with a viewing or detailed condition reports.
         </p>
 
         <div className="mb-12 flex flex-col items-center justify-center gap-8 md:flex-row md:gap-16">
