@@ -1,5 +1,6 @@
 import heroImage from "@/assets/yacht-hero.webp";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import PriceBanner from "@/components/PriceBanner";
 
 const HeroSection = () => {
   return (
