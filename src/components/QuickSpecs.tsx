@@ -1,8 +1,8 @@
 import { Ruler, Calendar, Users, BedDouble, UserCog, Flag, Receipt } from "lucide-react";
 
 const specs = [
-  { icon: Ruler, label: "Length", value: "44m / 144'" },
-  { icon: Calendar, label: "Build/Refit", value: "2004 / 2015" },
+  { icon: Ruler, label: "Length", value: "43.50 m" },
+  { icon: Calendar, label: "Build/Refit", value: "2011 / 2022" },
   { icon: Users, label: "Guests", value: "12" },
   { icon: BedDouble, label: "Cabins", value: "6" },
   { icon: UserCog, label: "Crew", value: "9" },
