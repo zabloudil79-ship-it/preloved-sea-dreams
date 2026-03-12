@@ -78,7 +78,7 @@ const ImageGallery = () => {
             Tour
           </p>
           <h2 className="font-display text-4xl font-medium text-foreground">
-            Galerie
+            Gallery
           </h2>
           <div className="mx-auto mt-4 h-[2px] w-16 bg-primary" />
         </div>
