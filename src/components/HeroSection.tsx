@@ -48,11 +48,7 @@ const HeroSection = () => {
       </div>
 
       {/* Bottom navigation */}
-      <div className="absolute bottom-0 left-0 right-0 z-10 flex items-center justify-between border-t border-foreground/10 px-8 py-4">
-        <button className="flex items-center gap-2 font-body text-sm uppercase tracking-[0.1em] text-foreground/60 transition-colors hover:text-foreground">
-          <ChevronLeft className="h-4 w-4" />
-          Předchozí jachta
-        </button>
+      <div className="absolute bottom-0 left-0 right-0 z-10 flex items-center justify-center border-t border-foreground/10 px-8 py-4">
         <div className="hidden gap-8 font-body text-sm uppercase tracking-[0.15em] text-foreground/70 md:flex">
           <a href="#popis" className="transition-colors hover:text-primary">Popis</a>
           <span className="text-foreground/20">|</span>
@@ -60,10 +56,6 @@ const HeroSection = () => {
           <span className="text-foreground/20">|</span>
           <a href="#galerie" className="transition-colors hover:text-primary">Galerie</a>
         </div>
-        <button className="flex items-center gap-2 font-body text-sm uppercase tracking-[0.1em] text-foreground/60 transition-colors hover:text-foreground">
-          Další jachta
-          <ChevronRight className="h-4 w-4" />
-        </button>
       </div>
     </section>);
 
