@@ -43,7 +43,7 @@ const HeroSection = () => {
           BARON TRENK 
         </h1>
         <p className="font-display text-lg italic text-muted-foreground">
-          Shipworks Brisbane
+          Built to explore the world in uncompromising luxury.
         </p>
       </div>
 
