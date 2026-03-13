@@ -33,7 +33,7 @@ const specGroups = [
     title: "Performance & Engines",
     specs: [
       { label: "Cruising Speed", value: "12 knots" },
-      { label: "Max Speed", value: "16 knots" },
+      { label: "Max Speed", value: "15 knots" },
       { label: "Fuel Consumption", value: "100 l/h (ECO 10 knots)" },
       { label: "Range", value: "11 600 nm" },
       { label: "Engines", value: "2 X MTU Type 12V2000M60 1632 HP" },
