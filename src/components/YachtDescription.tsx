@@ -68,6 +68,7 @@ const YachtDescription = () => {
             <li>Low fuel consumption</li>
             <li>Large exterior spaces</li>
             <li>Zero-speed stabilizers NAIAD</li>
+            <li>Shore Power Frequency Converters</li>
           </ul>
         </div>
       </div>
