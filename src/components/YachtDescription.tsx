@@ -56,7 +56,7 @@ const YachtDescription = () => {
             With her robust construction, exceptional range and generous onboard volume, BARON TRENCK is ideally suited for global cruising and luxury island-hopping adventures. Her relatively shallow draft of approximately 3 metres also allows access to secluded bays and anchorages often unreachable by larger yachts.
           </p>
           <p>
-            Combining expedition capability with refined luxury, BARON TRENK represents a rare opportunity to own a capable long-range explorer superyacht with timeless appeal and global cruising potential.
+            Combining expedition capability with refined luxury, BARON TRENCK represents a rare opportunity to own a capable long-range explorer superyacht with timeless appeal and global cruising potential.
           </p>
 
           <h3 className="pt-4 font-display text-2xl font-medium text-foreground">
