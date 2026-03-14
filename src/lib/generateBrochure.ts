@@ -569,26 +569,38 @@ export async function generateBrochure() {
   // Page 1 - Cover
   await pageCover(doc, hero);
 
-  // Page 2 - Quick Specs + Description
+  // Page 2 - Quick Specs
   doc.addPage();
   pageQuickSpecs(doc);
 
-  // Page 3 - Specifications
+  // Page 3 - Description (part 1)
+  doc.addPage();
+  pageDescription1(doc);
+
+  // Page 4 - Description (part 2)
+  doc.addPage();
+  pageDescription2(doc);
+
+  // Page 5 - Specifications
   doc.addPage();
   pageSpecifications(doc);
 
-  // Pages 4-8 - Gallery (6 per page, 30 images = 5 pages)
+  // Pages 6-10 - Gallery (6 per page, 30 images = 5 pages)
   for (let i = 0; i < 5; i++) {
     doc.addPage();
     const pageImages = allGallery.slice(i * 6, i * 6 + 6);
     pageGallery(doc, pageImages, galleryPageTitles[i] || "Gallery");
   }
 
-  // Page 9 - Deck Plans
+  // Page 11 - Deck Plans (Sundeck + Upper Deck)
   doc.addPage();
-  pageDeckPlans(doc, [sundeck, upperdeck, maindeck, lowerdeck]);
+  pageDeckPlans(doc, [sundeck, upperdeck], ["Sundeck", "Upper Deck"]);
 
-  // Page 10 - Contact
+  // Page 12 - Deck Plans (Main Deck + Lower Deck)
+  doc.addPage();
+  pageDeckPlans(doc, [maindeck, lowerdeck], ["Main Deck", "Lower Deck"]);
+
+  // Page 13 - Contact
   doc.addPage();
   pageContact(doc);
 
