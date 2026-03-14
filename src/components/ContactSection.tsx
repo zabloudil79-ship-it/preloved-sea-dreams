@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import { generateBrochure } from "@/lib/generateBrochure";
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -15,6 +16,19 @@ const ContactSection = () => {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [generatingPdf, setGeneratingPdf] = useState(false);
+
+  const handleDownload = async () => {
+    setGeneratingPdf(true);
+    try {
+      await generateBrochure();
+      toast({ title: "Brochure Downloaded", description: "Your PDF brochure has been saved." });
+    } catch {
+      toast({ title: "Error", description: "Failed to generate brochure.", variant: "destructive" });
+    } finally {
+      setGeneratingPdf(false);
+    }
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -64,8 +78,11 @@ const ContactSection = () => {
           </div>
         </div>
 
-        <button className="mb-16 bg-primary px-12 py-4 font-body text-sm uppercase tracking-[0.2em] text-primary-foreground transition-opacity hover:opacity-90">
-          Download Brochure
+        <button
+          onClick={handleDownload}
+          disabled={generatingPdf}
+          className="mb-16 bg-primary px-12 py-4 font-body text-sm uppercase tracking-[0.2em] text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-50">
+          {generatingPdf ? "Generating..." : "Download Brochure"}
         </button>
 
         {/* Inquiry Form */}
