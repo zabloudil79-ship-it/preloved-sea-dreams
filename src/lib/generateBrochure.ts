@@ -105,7 +105,7 @@ async function page1(doc: jsPDF, heroImage: HTMLImageElement) {
 
   // Price at bottom
   doc.setFillColor(DARK_BG);
-  doc.setGState(new doc.GState({ opacity: 0.8 }));
+  doc.setGState(new GState({ opacity: 0.8 }));
   doc.roundedRect(PAGE_W / 2 - 55, PAGE_H - 45, 110, 30, 2, 2, "F");
   doc.setGState(new doc.GState({ opacity: 1 }));
 
