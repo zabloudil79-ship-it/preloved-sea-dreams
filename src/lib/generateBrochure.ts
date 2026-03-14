@@ -127,26 +127,26 @@ async function pageCover(doc: jsPDF, heroImage: HTMLImageElement) {
   doc.setFont("times", "bolditalic");
   doc.text("BARON TRENCK", PAGE_W / 2, 42, { align: "center" });
 
-  // Price banner (red, like website)
-  const bannerY = PAGE_H - 60;
-  const bannerH = 32;
+  // Price banner (red, at very bottom)
+  const bannerY = PAGE_H - 38;
+  const bannerH = 28;
   doc.setFillColor(RED_BANNER);
   doc.rect(0, bannerY, PAGE_W, bannerH, "F");
 
   doc.setTextColor(WHITE);
   doc.setFontSize(28);
   doc.setFont("helvetica", "bold");
-  doc.text("€5,990,000", PAGE_W / 2, bannerY + 14, { align: "center" });
+  doc.text("€5,990,000", PAGE_W / 2, bannerY + 12, { align: "center" });
 
-  doc.setFontSize(10);
+  doc.setFontSize(9);
   doc.setFont("helvetica", "bold");
-  doc.text("AMAZING DEAL – Special price for the pre-season sale, valid until May 2026", PAGE_W / 2, bannerY + 24, { align: "center" });
+  doc.text("AMAZING DEAL – Special price for the pre-season sale, valid until May 2026", PAGE_W / 2, bannerY + 21, { align: "center" });
 
-  // Tagline below banner
+  // Tagline just above banner
   doc.setTextColor(GOLD);
   doc.setFontSize(13);
   doc.setFont("times", "italic");
-  doc.text("Built to explore the world in uncompromising luxury.", PAGE_W / 2, PAGE_H - 18, { align: "center" });
+  doc.text("Built to explore the world in uncompromising luxury.", PAGE_W / 2, bannerY - 6, { align: "center" });
 }
 
 // ─── PAGE 2: QUICK SPECS ───
