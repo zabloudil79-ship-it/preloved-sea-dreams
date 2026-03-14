@@ -444,28 +444,27 @@ function pageGallery(doc: jsPDF, images: HTMLImageElement[], pageTitle: string) 
   });
 }
 
-// ─── DECK PLANS (all 4 on one page) ───
-function pageDeckPlans(doc: jsPDF, deckImages: HTMLImageElement[]) {
+// ─── DECK PLANS (2 pages, 2 decks each) ───
+function pageDeckPlans(doc: jsPDF, deckImages: HTMLImageElement[], labels: string[]) {
   drawPageBg(doc);
 
   const startY = drawSectionHeader(doc, "Deck Plans", "Layout", 18);
 
-  const labels = ["Sundeck", "Upper Deck", "Main Deck", "Lower Deck"];
   const margin = 25;
-  const gap = 3;
+  const gap = 6;
   const deckW = PAGE_W - margin * 2;
-  const availH = PAGE_H - startY - 15;
-  const deckH = (availH - gap * 3 - labels.length * 8) / labels.length;
+  const availH = PAGE_H - startY - 18;
+  const deckH = (availH - gap - 2 * 10) / 2;
 
   deckImages.forEach((img, i) => {
-    const y = startY + 4 + i * (deckH + gap + 8);
+    const y = startY + 4 + i * (deckH + gap + 10);
 
     doc.setTextColor(GOLD);
-    doc.setFontSize(8);
+    doc.setFontSize(9);
     doc.setFont("helvetica", "normal");
-    doc.text(labels[i].toUpperCase(), margin, y + 3);
+    doc.text(labels[i].toUpperCase(), margin, y + 4);
 
-    addImageCover(doc, img, margin, y + 5, deckW, deckH);
+    addImageCover(doc, img, margin, y + 6, deckW, deckH);
   });
 }
 
