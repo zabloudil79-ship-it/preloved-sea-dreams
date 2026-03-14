@@ -77,7 +77,7 @@ async function page1(doc: jsPDF, heroImage: HTMLImageElement) {
   doc.setFillColor(0, 0, 0);
   doc.setGState(new GState({ opacity: 0.55 }));
   doc.rect(0, 0, PAGE_W, PAGE_H, "F");
-  doc.setGState(new doc.GState({ opacity: 1 }));
+  doc.setGState(new GState({ opacity: 1 }));
 
   // Gold accent line top
   drawGoldLine(doc, PAGE_W / 2 - 30, 55, 60);
