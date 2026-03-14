@@ -120,12 +120,12 @@ async function pageCover(doc: jsPDF, heroImage: HTMLImageElement) {
   doc.setTextColor(GOLD);
   doc.setFontSize(16);
   doc.setFont("helvetica", "normal");
-  doc.text("43.5 M SUPERYACHT FOR SALE", PAGE_W / 2, 50, { align: "center" });
+  doc.text("43.5 M SUPERYACHT FOR SALE", PAGE_W / 2, 18, { align: "center" });
 
   doc.setTextColor(WHITE);
   doc.setFontSize(56);
   doc.setFont("times", "bolditalic");
-  doc.text("BARON TRENCK", PAGE_W / 2, 78, { align: "center" });
+  doc.text("BARON TRENCK", PAGE_W / 2, 42, { align: "center" });
 
   // Price banner (red, like website)
   const bannerY = PAGE_H - 60;
