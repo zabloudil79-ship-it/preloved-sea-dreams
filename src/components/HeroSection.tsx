@@ -14,20 +14,21 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
       </div>
 
+      {/* Amazing Deal badge */}
+      <div className="relative z-10 flex justify-center pt-4">
+        <span className="inline-block animate-pulse rounded-sm border border-primary/40 bg-primary/10 px-6 py-2 font-body text-sm uppercase tracking-[0.3em] text-primary backdrop-blur-md shadow-[0_0_20px_hsl(var(--primary)/0.15)]">
+          ✦ Amazing Deal ✦
+        </span>
+      </div>
+
       {/* Hero content - top */}
-      <div className="relative z-10 px-8 pt-4 text-center">
+      <div className="relative z-10 px-8 pt-3 text-center">
         <p className="mb-2 font-body uppercase tracking-[0.25em] text-primary text-6xl">
           43.5 m SUPERYACHT FOR SALE 
         </p>
         <h1 className="mb-3 font-display text-5xl font-medium tracking-wide text-foreground md:text-9xl">
           BARON TRENCK 
         </h1>
-        {/* Amazing Deal badge */}
-        <div className="flex justify-center pt-2">
-          <span className="inline-block animate-pulse rounded-sm border border-primary/40 bg-primary/10 px-6 py-2 font-body text-sm uppercase tracking-[0.3em] text-primary backdrop-blur-md shadow-[0_0_20px_hsl(var(--primary)/0.15)]">
-            ✦ Amazing Deal ✦
-          </span>
-        </div>
       </div>
 
       {/* Bottom content */}
