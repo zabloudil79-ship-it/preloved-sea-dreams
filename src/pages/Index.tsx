@@ -3,7 +3,6 @@ import PriceBanner from "@/components/PriceBanner";
 import QuickSpecs from "@/components/QuickSpecs";
 import YachtDescription from "@/components/YachtDescription";
 import ImageGallery from "@/components/ImageGallery";
-import VideoSection from "@/components/VideoSection";
 import Specifications from "@/components/Specifications";
 import LayoutSection from "@/components/LayoutSection";
 import ContactSection from "@/components/ContactSection";
@@ -16,7 +15,6 @@ const Index = () => {
       <QuickSpecs />
       <YachtDescription />
       <ImageGallery />
-      <VideoSection />
       <Specifications />
       <LayoutSection />
       <ContactSection />
