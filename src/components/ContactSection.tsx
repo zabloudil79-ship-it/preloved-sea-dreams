@@ -78,8 +78,11 @@ const ContactSection = () => {
           </div>
         </div>
 
-        <button className="mb-16 bg-primary px-12 py-4 font-body text-sm uppercase tracking-[0.2em] text-primary-foreground transition-opacity hover:opacity-90">
-          Download Brochure
+        <button
+          onClick={handleDownload}
+          disabled={generatingPdf}
+          className="mb-16 bg-primary px-12 py-4 font-body text-sm uppercase tracking-[0.2em] text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-50">
+          {generatingPdf ? "Generating..." : "Download Brochure"}
         </button>
 
         {/* Inquiry Form */}
