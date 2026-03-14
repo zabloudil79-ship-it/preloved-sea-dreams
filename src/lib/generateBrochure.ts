@@ -75,7 +75,7 @@ async function page1(doc: jsPDF, heroImage: HTMLImageElement) {
 
   // Dark gradient overlay
   doc.setFillColor(0, 0, 0);
-  doc.setGState(new doc.GState({ opacity: 0.55 }));
+  doc.setGState(new GState({ opacity: 0.55 }));
   doc.rect(0, 0, PAGE_W, PAGE_H, "F");
   doc.setGState(new doc.GState({ opacity: 1 }));
 
