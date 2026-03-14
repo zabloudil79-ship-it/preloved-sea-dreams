@@ -5,7 +5,7 @@ const PriceBanner = () => {
         <p className="text-3xl font-semibold tracking-wide text-destructive-foreground font-sans md:text-6xl">
           €5,990,000
         </p>
-        <p className="mt-1 font-body text-sm uppercase tracking-[0.2em] text-primary-foreground/80">
+        <p className="mt-1 font-body uppercase tracking-[0.2em] text-primary-foreground/80 text-lg">
           AMAZING DEAL - Special price for the pre-season sale, valid until May 2026
         </p>
       </div>
