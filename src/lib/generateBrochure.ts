@@ -2,25 +2,50 @@ import jsPDF, { GState } from "jspdf";
 
 // Import images
 import heroImg from "@/assets/yacht-hero.webp";
-import interiorImg from "@/assets/yacht-interior.jpg";
-import cabinImg from "@/assets/yacht-cabin.jpg";
-import deckImg from "@/assets/yacht-deck.jpg";
 import gallery1 from "@/assets/gallery-1.webp";
 import gallery2 from "@/assets/gallery-2.webp";
 import gallery3 from "@/assets/gallery-3.webp";
 import gallery4 from "@/assets/gallery-4.webp";
+import galleryNew4 from "@/assets/gallery-new-4.webp";
 import gallery5 from "@/assets/gallery-5.webp";
 import gallery6 from "@/assets/gallery-6.webp";
+import gallery7 from "@/assets/gallery-7.webp";
+import gallery8 from "@/assets/gallery-8.webp";
+import gallery9 from "@/assets/gallery-9.webp";
+import gallery10 from "@/assets/gallery-10.webp";
+import gallery11 from "@/assets/gallery-11.webp";
+import gallery12 from "@/assets/gallery-12.webp";
+import gallery13 from "@/assets/gallery-13.webp";
+import gallery14 from "@/assets/gallery-14.webp";
+import gallery15 from "@/assets/gallery-15.webp";
+import gallery16 from "@/assets/gallery-16.webp";
+import gallery17 from "@/assets/gallery-17.webp";
+import gallery18 from "@/assets/gallery-18.webp";
+import gallery19 from "@/assets/gallery-19.webp";
+import gallery20 from "@/assets/gallery-20.webp";
+import gallery21 from "@/assets/gallery-21.webp";
+import gallery22 from "@/assets/gallery-22.webp";
+import gallery23 from "@/assets/gallery-23.webp";
+import gallery24 from "@/assets/gallery-24.webp";
+import gallery25 from "@/assets/gallery-25.webp";
+import gallery26 from "@/assets/gallery-26.webp";
+import gallery27 from "@/assets/gallery-27.webp";
+import gallery28 from "@/assets/gallery-28.webp";
+import gallery29 from "@/assets/gallery-29.webp";
 import sundeckImg from "@/assets/sundeck.jpg";
 import upperdeckImg from "@/assets/upperdeck.jpg";
 import maindeckImg from "@/assets/maindeck.jpg";
 import lowerdeckImg from "@/assets/lowerdeck.jpg";
 
-const GOLD = "#c9942e";
-const DARK_BG = "#0f1419";
-const DARK_CARD = "#161c24";
-const WHITE = "#f0f2f5";
-const MUTED = "#7a8699";
+// Colors matching the website design system
+const GOLD = "#c49a2e"; // hsl(38, 70%, 55%)
+const DARK_BG = "#0f1319"; // hsl(216, 28%, 7%)
+const DARK_CARD = "#181e28"; // hsl(216, 25%, 11%)
+const WHITE = "#f0f2f5"; // hsl(210, 20%, 95%)
+const MUTED = "#7a8699"; // hsl(213, 15%, 55%)
+const SECONDARY_FG = "#c0c8d4"; // hsl(210, 20%, 85%)
+const BORDER = "#252e3b"; // hsl(216, 20%, 18%)
+const RED_BANNER = "#e04040"; // destructive
 const PAGE_W = 297; // A4 landscape
 const PAGE_H = 210;
 
@@ -41,12 +66,27 @@ function drawPageBg(doc: jsPDF) {
 
 function drawGoldLine(doc: jsPDF, x: number, y: number, w: number) {
   doc.setDrawColor(GOLD);
-  doc.setLineWidth(0.5);
+  doc.setLineWidth(0.6);
   doc.line(x, y, x + w, y);
 }
 
+function drawSectionHeader(doc: jsPDF, subtitle: string, title: string, y: number): number {
+  doc.setTextColor(GOLD);
+  doc.setFontSize(9);
+  doc.setFont("helvetica", "normal");
+  doc.text(subtitle.toUpperCase(), PAGE_W / 2, y, { align: "center" });
+
+  doc.setTextColor(WHITE);
+  doc.setFontSize(26);
+  doc.setFont("times", "bold");
+  doc.text(title, PAGE_W / 2, y + 13, { align: "center" });
+
+  drawGoldLine(doc, PAGE_W / 2 - 20, y + 17, 40);
+
+  return y + 25;
+}
+
 function addImageCover(doc: jsPDF, img: HTMLImageElement, x: number, y: number, w: number, h: number) {
-  // Calculate cover dimensions
   const imgRatio = img.width / img.height;
   const boxRatio = w / h;
   let sx = 0, sy = 0, sw = img.width, sh = img.height;
@@ -57,7 +97,6 @@ function addImageCover(doc: jsPDF, img: HTMLImageElement, x: number, y: number, 
     sh = img.width / boxRatio;
     sy = (img.height - sh) / 2;
   }
-
   const canvas = document.createElement("canvas");
   canvas.width = w * 4;
   canvas.height = h * 4;
@@ -66,327 +105,392 @@ function addImageCover(doc: jsPDF, img: HTMLImageElement, x: number, y: number, 
   doc.addImage(canvas.toDataURL("image/jpeg", 0.85), "JPEG", x, y, w, h);
 }
 
-// Page 1: Title Page
-async function page1(doc: jsPDF, heroImage: HTMLImageElement) {
+// ─── PAGE 1: HERO / COVER ───
+async function pageCover(doc: jsPDF, heroImage: HTMLImageElement) {
   drawPageBg(doc);
-
-  // Hero image with overlay
   addImageCover(doc, heroImage, 0, 0, PAGE_W, PAGE_H);
 
-  // Dark gradient overlay
+  // Gradient overlay top + bottom
   doc.setFillColor(0, 0, 0);
-  doc.setGState(new GState({ opacity: 0.55 }));
+  doc.setGState(new GState({ opacity: 0.5 }));
   doc.rect(0, 0, PAGE_W, PAGE_H, "F");
   doc.setGState(new GState({ opacity: 1 }));
 
-  // Gold accent line top
-  drawGoldLine(doc, PAGE_W / 2 - 30, 55, 60);
-
-  // Subtitle
+  // Top content
   doc.setTextColor(GOLD);
-  doc.setFontSize(14);
+  doc.setFontSize(16);
   doc.setFont("helvetica", "normal");
-  doc.text("43.5 M SUPERYACHT FOR SALE", PAGE_W / 2, 70, { align: "center" });
+  doc.text("43.5 M SUPERYACHT FOR SALE", PAGE_W / 2, 50, { align: "center" });
 
-  // Title
   doc.setTextColor(WHITE);
-  doc.setFontSize(48);
-  doc.setFont("helvetica", "bold");
-  doc.text("BARON TRENCK", PAGE_W / 2, 95, { align: "center" });
+  doc.setFontSize(56);
+  doc.setFont("times", "bolditalic");
+  doc.text("BARON TRENCK", PAGE_W / 2, 78, { align: "center" });
 
-  // Gold line below title
-  drawGoldLine(doc, PAGE_W / 2 - 30, 103, 60);
-
-  // Tagline
-  doc.setTextColor(MUTED);
-  doc.setFontSize(11);
-  doc.setFont("helvetica", "normal");
-  doc.text("Explorer Superyacht by Eurocraft Cantieri Navali", PAGE_W / 2, 115, { align: "center" });
-
-  // Price at bottom
-  doc.setFillColor(DARK_BG);
-  doc.setGState(new GState({ opacity: 0.8 }));
-  doc.roundedRect(PAGE_W / 2 - 55, PAGE_H - 45, 110, 30, 2, 2, "F");
-  doc.setGState(new GState({ opacity: 1 }));
-
-  doc.setTextColor(GOLD);
-  doc.setFontSize(10);
-  doc.text("ASKING PRICE", PAGE_W / 2, PAGE_H - 33, { align: "center" });
-  doc.setTextColor(WHITE);
-  doc.setFontSize(22);
-  doc.setFont("helvetica", "bold");
-  doc.text("€ 8,250,000", PAGE_W / 2, PAGE_H - 22, { align: "center" });
-}
-
-// Page 2: Key Specifications
-function page2(doc: jsPDF) {
-  drawPageBg(doc);
-
-  doc.setTextColor(GOLD);
-  doc.setFontSize(10);
-  doc.setFont("helvetica", "normal");
-  doc.text("KEY SPECIFICATIONS", PAGE_W / 2, 25, { align: "center" });
+  // Price banner (red, like website)
+  const bannerY = PAGE_H - 60;
+  const bannerH = 32;
+  doc.setFillColor(RED_BANNER);
+  doc.rect(0, bannerY, PAGE_W, bannerH, "F");
 
   doc.setTextColor(WHITE);
   doc.setFontSize(28);
   doc.setFont("helvetica", "bold");
-  doc.text("Technical Overview", PAGE_W / 2, 38, { align: "center" });
+  doc.text("€5,990,000", PAGE_W / 2, bannerY + 14, { align: "center" });
 
-  drawGoldLine(doc, PAGE_W / 2 - 25, 43, 50);
+  doc.setFontSize(10);
+  doc.setFont("helvetica", "bold");
+  doc.text("AMAZING DEAL – Special price for the pre-season sale, valid until May 2026", PAGE_W / 2, bannerY + 24, { align: "center" });
+
+  // Tagline below banner
+  doc.setTextColor(GOLD);
+  doc.setFontSize(13);
+  doc.setFont("times", "italic");
+  doc.text("Built to explore the world in uncompromising luxury.", PAGE_W / 2, PAGE_H - 18, { align: "center" });
+}
+
+// ─── PAGE 2: QUICK SPECS ───
+function pageQuickSpecs(doc: jsPDF) {
+  drawPageBg(doc);
+
+  const startY = drawSectionHeader(doc, "Key Specifications", "At a Glance", 25);
 
   const specs = [
-    ["Length Overall", "43.50 m (142.7 ft)"],
-    ["Beam", "8.20 m (26.9 ft)"],
-    ["Draft", "3.1 m (10.7 ft)"],
-    ["Gross Tonnage", "498 GT"],
-    ["Builder", "Eurocraft Cantieri Navali"],
-    ["Year / Refit", "2011 / 2022"],
-    ["Hull", "Steel"],
-    ["Superstructure", "Aluminium"],
-    ["Flag", "Malta"],
-    ["Engines", "2× MTU 12V2000M60 (1632 HP)"],
-    ["Cruising Speed", "12 knots"],
-    ["Max Speed", "15 knots"],
-    ["Range", "11,600 nm"],
-    ["Fuel Consumption", "100 l/h (ECO 10 kn)"],
-    ["Fuel Capacity", "105,000 L"],
-    ["Water Capacity", "23,270 L"],
-    ["Guests", "12 in 6 cabins"],
-    ["Crew", "9 in 4 cabins"],
-    ["Stabilizers", "NAIAD Zero-Speed"],
-    ["VAT", "Not Paid"],
+    { label: "Length", value: "43.50 m" },
+    { label: "Build/Refit", value: "2011 / 2022" },
+    { label: "Guests", value: "12" },
+    { label: "Cabins", value: "6" },
+    { label: "Crew", value: "9" },
+    { label: "Flag", value: "Malta" },
+    { label: "VAT", value: "Not Paid" },
   ];
 
-  const colX = [30, PAGE_W / 2 + 15];
-  const startY = 55;
-  const rowH = 7.5;
+  const boxW = 30;
+  const totalW = specs.length * boxW + (specs.length - 1) * 6;
+  const sx = (PAGE_W - totalW) / 2;
+  const y = startY + 10;
 
   specs.forEach((spec, i) => {
-    const col = i < 10 ? 0 : 1;
-    const row = i < 10 ? i : i - 10;
-    const x = colX[col];
-    const y = startY + row * rowH;
+    const x = sx + i * (boxW + 6);
 
-    // Alternating background
-    if (row % 2 === 0) {
-      doc.setFillColor(DARK_CARD);
-      doc.rect(x - 3, y - 4.5, PAGE_W / 2 - 32, rowH, "F");
-    }
+    // Card background
+    doc.setFillColor(DARK_CARD);
+    doc.roundedRect(x, y, boxW, 35, 2, 2, "F");
+
+    doc.setTextColor(GOLD);
+    doc.setFontSize(16);
+    doc.setFont("times", "bold");
+    doc.text(spec.value, x + boxW / 2, y + 16, { align: "center" });
 
     doc.setTextColor(MUTED);
-    doc.setFontSize(9);
+    doc.setFontSize(7);
     doc.setFont("helvetica", "normal");
-    doc.text(spec[0], x, y);
+    doc.text(spec.label.toUpperCase(), x + boxW / 2, y + 26, { align: "center" });
+  });
 
+  // Description below
+  const descY = y + 55;
+  const contentY = drawSectionHeader(doc, "Description", "BARON TRENCK", descY);
+
+  const desc = [
+    "The 43.5-metre BARON TRENCK is a striking explorer superyacht built by the renowned Italian shipyard Eurocraft. Designed for owners who seek both adventure and sophistication, she perfectly balances robust engineering with the elegance and comfort expected from a modern superyacht.",
+    "",
+    "Constructed with a steel hull and aluminium superstructure, BARON TRENCK offers excellent seaworthiness, stability and long-range cruising capability. Powered by twin MTU diesel engines, she cruises comfortably at 10–12 knots and reaches a maximum speed of 14 knots, with an impressive range of over 11,600 nautical miles.",
+    "",
+    "She accommodates 12 guests in 6 well-appointed cabins and features NAIAD zero-speed stabilizers, multiple deck areas, a spacious sundeck with jacuzzi, and comprehensive amenities for extended voyages.",
+  ];
+
+  doc.setTextColor(SECONDARY_FG);
+  doc.setFontSize(10);
+  doc.setFont("helvetica", "normal");
+  const lines = doc.splitTextToSize(desc.join("\n"), PAGE_W - 80);
+  doc.text(lines, 40, contentY + 6);
+}
+
+// ─── PAGE 3: SPECIFICATIONS (grouped cards like the website) ───
+function pageSpecifications(doc: jsPDF) {
+  drawPageBg(doc);
+
+  const startY = drawSectionHeader(doc, "Technical Data", "Specifications", 20);
+
+  const specGroups = [
+    {
+      title: "Accommodation",
+      specs: [
+        ["Guests", "12"],
+        ["Cabins", "6"],
+        ["Configuration", "Double (4), Twin (2)"],
+        ["Crew", "9"],
+        ["Crew Cabins", "4"],
+      ],
+    },
+    {
+      title: "Construction & Design",
+      specs: [
+        ["Build / Refit", "2011 / 2022"],
+        ["Shipyard", "Eurocraft Cantieri Navali"],
+        ["Hull / Structure", "STEEL / ALUMINIUM"],
+        ["Flag", "Malta"],
+        ["VAT", "Not Paid"],
+      ],
+    },
+    {
+      title: "Dimensions",
+      specs: [
+        ["Length", "43.50 m / 142.7 ft"],
+        ["Beam", "8.20 m / 26.9 ft"],
+        ["Draft", "3.1 m / 10.7 ft"],
+        ["Gross Tonnage", "498 GT"],
+      ],
+    },
+    {
+      title: "Performance & Engines",
+      specs: [
+        ["Cruising Speed", "12 knots"],
+        ["Max Speed", "15 knots"],
+        ["Fuel Consumption", "100 l/h (ECO 10 kn)"],
+        ["Range", "11,600 nm"],
+        ["Engines", "2× MTU 12V2000M60 (1632 HP)"],
+      ],
+    },
+    {
+      title: "Capacities & Tanks",
+      specs: [
+        ["Fuel", "105,000 L"],
+        ["Fresh Water", "23,270 L"],
+        ["Stabilizers", "NAIAD Zero-Speed"],
+      ],
+    },
+  ];
+
+  const margin = 20;
+  const gap = 8;
+  const cardW = (PAGE_W - margin * 2 - gap) / 2;
+  let col = 0;
+  let row = 0;
+  let rowY = startY + 6;
+  const rowHeights: number[] = [];
+
+  // Pre-calculate row heights
+  for (let i = 0; i < specGroups.length; i += 2) {
+    const h1 = 14 + specGroups[i].specs.length * 7.5;
+    const h2 = i + 1 < specGroups.length ? 14 + specGroups[i + 1].specs.length * 7.5 : 0;
+    rowHeights.push(Math.max(h1, h2));
+  }
+
+  specGroups.forEach((group, i) => {
+    col = i % 2;
+    row = Math.floor(i / 2);
+
+    let y = startY + 6;
+    for (let r = 0; r < row; r++) y += rowHeights[r] + gap;
+
+    const x = margin + col * (cardW + gap);
+    const cardH = rowHeights[row];
+
+    // Card background with border
+    doc.setFillColor(DARK_CARD);
+    doc.roundedRect(x, y, cardW, cardH, 1.5, 1.5, "F");
+    doc.setDrawColor(BORDER);
+    doc.setLineWidth(0.3);
+    doc.roundedRect(x, y, cardW, cardH, 1.5, 1.5, "S");
+
+    // Title
     doc.setTextColor(WHITE);
-    doc.setFont("helvetica", "bold");
-    doc.text(spec[1], x + PAGE_W / 2 - 55, y, { align: "right" });
+    doc.setFontSize(11);
+    doc.setFont("times", "bold");
+    doc.text(group.title, x + 8, y + 10);
+
+    // Specs rows
+    group.specs.forEach((spec, si) => {
+      const sy = y + 18 + si * 7.5;
+
+      // Separator line
+      doc.setDrawColor(BORDER);
+      doc.setLineWidth(0.15);
+      doc.line(x + 8, sy - 3, x + cardW - 8, sy - 3);
+
+      doc.setTextColor(MUTED);
+      doc.setFontSize(8);
+      doc.setFont("helvetica", "normal");
+      doc.text(spec[0].toUpperCase(), x + 8, sy);
+
+      doc.setTextColor(WHITE);
+      doc.setFontSize(8);
+      doc.setFont("helvetica", "bold");
+      doc.text(spec[1], x + cardW - 8, sy, { align: "right" });
+    });
   });
 }
 
-// Page 3: Description
-function page3(doc: jsPDF) {
+// ─── GALLERY PAGE (6 images per page) ───
+function pageGallery(doc: jsPDF, images: HTMLImageElement[], pageTitle: string) {
   drawPageBg(doc);
 
-  doc.setTextColor(GOLD);
-  doc.setFontSize(10);
-  doc.setFont("helvetica", "normal");
-  doc.text("ABOUT THE YACHT", PAGE_W / 2, 25, { align: "center" });
+  const startY = drawSectionHeader(doc, "Tour", pageTitle, 18);
 
-  doc.setTextColor(WHITE);
-  doc.setFontSize(28);
-  doc.setFont("helvetica", "bold");
-  doc.text("Baron Trenck", PAGE_W / 2, 38, { align: "center" });
-
-  drawGoldLine(doc, PAGE_W / 2 - 25, 43, 50);
-
-  const desc = [
-    "Baron Trenck is a 43.5-metre explorer superyacht built by Eurocraft Cantieri Navali in 2011 and refitted in 2022. With her steel hull and aluminium superstructure, she combines robust ocean-going capability with refined luxury.",
-    "",
-    "She accommodates 12 guests in 6 well-appointed cabins — including 4 double and 2 twin cabins — served by a professional crew of 9. Her interior design reflects timeless elegance with warm woods, natural stone, and bespoke furnishings throughout.",
-    "",
-    "Powered by twin MTU engines producing 1,632 HP each, Baron Trenck achieves a cruising speed of 12 knots and a maximum speed of 15 knots, with an impressive range of 11,600 nautical miles at economical speed.",
-    "",
-    "Equipped with NAIAD zero-speed stabilizers, she ensures smooth cruising in all conditions. The yacht features multiple deck areas, a spacious sundeck, and comprehensive amenities for extended voyages."
-  ];
-
-  doc.setTextColor("#c8cdd5");
-  doc.setFontSize(11);
-  doc.setFont("helvetica", "normal");
-
-  const lines = doc.splitTextToSize(desc.join("\n"), PAGE_W - 80);
-  doc.text(lines, 40, 58);
-}
-
-// Page 4-5: Photo Gallery
-async function pageGallery(doc: jsPDF, images: HTMLImageElement[], pageTitle: string) {
-  drawPageBg(doc);
-
-  doc.setTextColor(GOLD);
-  doc.setFontSize(10);
-  doc.setFont("helvetica", "normal");
-  doc.text("GALLERY", PAGE_W / 2, 20, { align: "center" });
-
-  doc.setTextColor(WHITE);
-  doc.setFontSize(24);
-  doc.setFont("helvetica", "bold");
-  doc.text(pageTitle, PAGE_W / 2, 32, { align: "center" });
-
-  drawGoldLine(doc, PAGE_W / 2 - 20, 36, 40);
-
-  // 2x3 grid
-  const margin = 20;
-  const gap = 6;
+  const margin = 18;
+  const gap = 5;
   const cols = 3;
   const rows = 2;
   const imgW = (PAGE_W - margin * 2 - gap * (cols - 1)) / cols;
-  const imgH = (PAGE_H - 50 - margin - gap * (rows - 1)) / rows;
+  const imgH = (PAGE_H - startY - 10 - margin - gap * (rows - 1)) / rows;
 
   images.forEach((img, i) => {
     const col = i % cols;
     const row = Math.floor(i / cols);
     const x = margin + col * (imgW + gap);
-    const y = 45 + row * (imgH + gap);
+    const y = startY + 6 + row * (imgH + gap);
     addImageCover(doc, img, x, y, imgW, imgH);
   });
 }
 
-// Page 6: Deck Plans
-async function pageDeckPlans(doc: jsPDF, deckImages: HTMLImageElement[]) {
+// ─── DECK PLANS (all 4 on one page) ───
+function pageDeckPlans(doc: jsPDF, deckImages: HTMLImageElement[]) {
   drawPageBg(doc);
 
-  doc.setTextColor(GOLD);
-  doc.setFontSize(10);
-  doc.setFont("helvetica", "normal");
-  doc.text("LAYOUT", PAGE_W / 2, 20, { align: "center" });
-
-  doc.setTextColor(WHITE);
-  doc.setFontSize(24);
-  doc.setFont("helvetica", "bold");
-  doc.text("Deck Plans", PAGE_W / 2, 32, { align: "center" });
-
-  drawGoldLine(doc, PAGE_W / 2 - 20, 36, 40);
+  const startY = drawSectionHeader(doc, "Deck Plans", "Layout", 18);
 
   const labels = ["Sundeck", "Upper Deck", "Main Deck", "Lower Deck"];
-  const deckH = 35;
-  const deckW = PAGE_W - 60;
-  const startY = 45;
+  const margin = 25;
   const gap = 3;
+  const deckW = PAGE_W - margin * 2;
+  const availH = PAGE_H - startY - 15;
+  const deckH = (availH - gap * 3 - labels.length * 8) / labels.length;
 
   deckImages.forEach((img, i) => {
-    const y = startY + i * (deckH + gap + 8);
+    const y = startY + 4 + i * (deckH + gap + 8);
 
     doc.setTextColor(GOLD);
-    doc.setFontSize(9);
+    doc.setFontSize(8);
     doc.setFont("helvetica", "normal");
-    doc.text(labels[i], 30, y);
+    doc.text(labels[i].toUpperCase(), margin, y + 3);
 
-    addImageCover(doc, img, 30, y + 2, deckW, deckH);
+    addImageCover(doc, img, margin, y + 5, deckW, deckH);
   });
 }
 
-// Page 7: Contact
+// ─── CONTACT PAGE (no inquiry form) ───
 function pageContact(doc: jsPDF) {
   drawPageBg(doc);
 
-  doc.setTextColor(GOLD);
-  doc.setFontSize(10);
+  const startY = drawSectionHeader(doc, "Interested?", "Contact Us", 55);
+
+  drawGoldLine(doc, PAGE_W / 2 - 20, startY + 2, 40);
+
+  doc.setTextColor(SECONDARY_FG);
+  doc.setFontSize(11);
   doc.setFont("helvetica", "normal");
-  doc.text("CONTACT", PAGE_W / 2, 60, { align: "center" });
-
-  doc.setTextColor(WHITE);
-  doc.setFontSize(32);
-  doc.setFont("helvetica", "bold");
-  doc.text("Interested?", PAGE_W / 2, 78, { align: "center" });
-
-  drawGoldLine(doc, PAGE_W / 2 - 25, 84, 50);
-
-  doc.setTextColor("#c8cdd5");
-  doc.setFontSize(12);
-  doc.setFont("helvetica", "normal");
-  doc.text("We are ready to assist you with a viewing or detailed condition reports.", PAGE_W / 2, 98, { align: "center" });
+  doc.text("We are ready to assist you with a viewing or detailed condition reports.", PAGE_W / 2, startY + 14, { align: "center" });
 
   // Contact cards
-  const cardW = 70;
-  const cardH = 35;
-  const cardY = 115;
+  const cardW = 75;
+  const cardH = 38;
+  const cardY = startY + 28;
   const cards = [
-    { label: "Phone", value: "+420 775 799 901" },
-    { label: "Email", value: "info@yachtprofessional.cz" },
-    { label: "Location", value: "Italy" },
+    { label: "PHONE", value: "+420 775 799 901" },
+    { label: "EMAIL", value: "info@yachtprofessional.cz" },
+    { label: "LOCATION", value: "Italy" },
   ];
 
-  const totalW = cards.length * cardW + (cards.length - 1) * 10;
+  const totalW = cards.length * cardW + (cards.length - 1) * 12;
   const startX = (PAGE_W - totalW) / 2;
 
   cards.forEach((card, i) => {
-    const x = startX + i * (cardW + 10);
+    const x = startX + i * (cardW + 12);
+
     doc.setFillColor(DARK_CARD);
     doc.roundedRect(x, cardY, cardW, cardH, 2, 2, "F");
+    doc.setDrawColor(BORDER);
+    doc.setLineWidth(0.3);
+    doc.roundedRect(x, cardY, cardW, cardH, 2, 2, "S");
 
     doc.setTextColor(GOLD);
-    doc.setFontSize(9);
-    doc.text(card.label, x + cardW / 2, cardY + 14, { align: "center" });
+    doc.setFontSize(8);
+    doc.setFont("helvetica", "normal");
+    doc.text(card.label, x + cardW / 2, cardY + 15, { align: "center" });
 
     doc.setTextColor(WHITE);
-    doc.setFontSize(10);
+    doc.setFontSize(11);
     doc.setFont("helvetica", "bold");
-    doc.text(card.value, x + cardW / 2, cardY + 24, { align: "center" });
-    doc.setFont("helvetica", "normal");
+    doc.text(card.value, x + cardW / 2, cardY + 26, { align: "center" });
   });
 
   // Footer
   doc.setTextColor(MUTED);
-  doc.setFontSize(8);
-  doc.text("© 2025 Yacht Professional. All information is believed to be correct but not guaranteed.", PAGE_W / 2, PAGE_H - 15, { align: "center" });
+  doc.setFontSize(7);
+  doc.text("© 2026 YACHT Professional. All rights reserved.", PAGE_W / 2, PAGE_H - 15, { align: "center" });
+  doc.setFontSize(6);
+  doc.text("All information is believed to be correct but not guaranteed.", PAGE_W / 2, PAGE_H - 10, { align: "center" });
 }
 
+// ─── MAIN EXPORT ───
 export async function generateBrochure() {
   const doc = new jsPDF({ orientation: "landscape", unit: "mm", format: "a4" });
 
   // Load all images in parallel
-  const [hero, interior, cabin, deck, g1, g2, g3, g4, g5, g6, sundeck, upperdeck, maindeck, lowerdeck] =
-    await Promise.all([
-      loadImage(heroImg),
-      loadImage(interiorImg),
-      loadImage(cabinImg),
-      loadImage(deckImg),
-      loadImage(gallery1),
-      loadImage(gallery2),
-      loadImage(gallery3),
-      loadImage(gallery4),
-      loadImage(gallery5),
-      loadImage(gallery6),
-      loadImage(sundeckImg),
-      loadImage(upperdeckImg),
-      loadImage(maindeckImg),
-      loadImage(lowerdeckImg),
-    ]);
+  const [
+    hero,
+    g1, g2, g3, g4, gn4, g5, g6, g7, g8, g9,
+    g10, g11, g12, g13, g14, g15, g16, g17, g18, g19,
+    g20, g21, g22, g23, g24, g25, g26, g27, g28, g29,
+    sundeck, upperdeck, maindeck, lowerdeck,
+  ] = await Promise.all([
+    loadImage(heroImg),
+    loadImage(gallery1), loadImage(gallery2), loadImage(gallery3),
+    loadImage(gallery4), loadImage(galleryNew4), loadImage(gallery5),
+    loadImage(gallery6), loadImage(gallery7), loadImage(gallery8),
+    loadImage(gallery9), loadImage(gallery10), loadImage(gallery11),
+    loadImage(gallery12), loadImage(gallery13), loadImage(gallery14),
+    loadImage(gallery15), loadImage(gallery16), loadImage(gallery17),
+    loadImage(gallery18), loadImage(gallery19), loadImage(gallery20),
+    loadImage(gallery21), loadImage(gallery22), loadImage(gallery23),
+    loadImage(gallery24), loadImage(gallery25), loadImage(gallery26),
+    loadImage(gallery27), loadImage(gallery28), loadImage(gallery29),
+    loadImage(sundeckImg), loadImage(upperdeckImg),
+    loadImage(maindeckImg), loadImage(lowerdeckImg),
+  ]);
 
-  // Page 1 - Title
-  await page1(doc, hero);
+  // All gallery images in order matching the website
+  const allGallery = [
+    g1, g2, g4, g3, g6, gn4,
+    g5, g7, g8, g9, g10, g11,
+    g12, g13, g14, g15, g16, g17,
+    g18, g19, g20, g21, g22, g23,
+    g24, g25, g26, g27, g28, g29,
+  ];
 
-  // Page 2 - Specs
+  const galleryPageTitles = [
+    "Exterior",
+    "Deck & Amenities",
+    "Interior & Salon",
+    "Cabins & Suites",
+    "Details & Bridge",
+  ];
+
+  // Page 1 - Cover
+  await pageCover(doc, hero);
+
+  // Page 2 - Quick Specs + Description
   doc.addPage();
-  page2(doc);
+  pageQuickSpecs(doc);
 
-  // Page 3 - Description
+  // Page 3 - Specifications
   doc.addPage();
-  page3(doc);
+  pageSpecifications(doc);
 
-  // Page 4 - Gallery 1
+  // Pages 4-8 - Gallery (6 per page, 30 images = 5 pages)
+  for (let i = 0; i < 5; i++) {
+    doc.addPage();
+    const pageImages = allGallery.slice(i * 6, i * 6 + 6);
+    pageGallery(doc, pageImages, galleryPageTitles[i] || "Gallery");
+  }
+
+  // Page 9 - Deck Plans
   doc.addPage();
-  await pageGallery(doc, [g1, g2, g3, interior, cabin, deck], "Exterior & Interior");
+  pageDeckPlans(doc, [sundeck, upperdeck, maindeck, lowerdeck]);
 
-  // Page 5 - Gallery 2
-  doc.addPage();
-  await pageGallery(doc, [g4, g5, g6, g1, g2, g3], "Details & Amenities");
-
-  // Page 6 - Deck Plans
-  doc.addPage();
-  await pageDeckPlans(doc, [sundeck, upperdeck, maindeck, lowerdeck]);
-
-  // Page 7 - Contact
+  // Page 10 - Contact
   doc.addPage();
   pageContact(doc);
 
