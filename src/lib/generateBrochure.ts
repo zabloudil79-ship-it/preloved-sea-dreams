@@ -188,23 +188,122 @@ function pageQuickSpecs(doc: jsPDF) {
     doc.text(spec.label.toUpperCase(), x + boxW / 2, y + 26, { align: "center" });
   });
 
-  // Description below
-  const descY = y + 55;
-  const contentY = drawSectionHeader(doc, "Description", "BARON TRENCK", descY);
+}
 
-  const desc = [
+// ─── DESCRIPTION PAGES (full text from website) ───
+function pageDescription1(doc: jsPDF) {
+  drawPageBg(doc);
+
+  const startY = drawSectionHeader(doc, "Description", "BARON TRENCK", 22);
+
+  const paragraphs = [
     "The 43.5-metre BARON TRENCK is a striking explorer superyacht built by the renowned Italian shipyard Eurocraft. Designed for owners who seek both adventure and sophistication, she perfectly balances robust engineering with the elegance and comfort expected from a modern superyacht.",
     "",
-    "Constructed with a steel hull and aluminium superstructure, BARON TRENCK offers excellent seaworthiness, stability and long-range cruising capability. Powered by twin MTU diesel engines, she cruises comfortably at 10–12 knots and reaches a maximum speed of 14 knots, with an impressive range of over 11,600 nautical miles.",
+    "Constructed with a steel hull and aluminium superstructure, BARON TRENCK offers excellent seaworthiness, stability and long-range cruising capability. Her distinctive profile, highlighted by a powerful bow and purposeful explorer styling, reflects a yacht designed to confidently cross oceans while maintaining exceptional comfort on board.",
     "",
-    "She accommodates 12 guests in 6 well-appointed cabins and features NAIAD zero-speed stabilizers, multiple deck areas, a spacious sundeck with jacuzzi, and comprehensive amenities for extended voyages.",
+    "Powered by twin MTU diesel engines, she cruises comfortably at 10–12 knots and reaches a maximum speed of 14 knots. Thanks to her efficient fuel consumption and large fuel capacity, she offers an impressive range of over 11,600 nautical miles, making her perfectly suited for long-distance cruising and exploration of remote destinations.",
+    "",
+    "",
+    "Elegant accommodation for 12 guests",
+    "",
+    "BARON TRENCK offers luxurious accommodation for up to 12 guests in five beautifully appointed staterooms.",
+    "",
+    "The impressive full-beam Master Suite is located on the main deck and benefits from large oval windows offering stunning ocean views. The suite also features a private office, spacious walk-in wardrobe and separate his-and-hers bathrooms, creating an exceptional private retreat for the owner.",
+    "",
+    "The lower deck hosts a generous full-beam VIP suite, one double cabin and one twin cabin. An additional 2 guests cabin located on the bridge deck can also be used as a massage or wellness treatment room, offering additional flexibility for guests.",
+    "",
+    "Accommodation for up to nine crew members ensures seamless service and a relaxed luxury experience on board.",
   ];
 
   doc.setTextColor(SECONDARY_FG);
   doc.setFontSize(10);
   doc.setFont("helvetica", "normal");
-  const lines = doc.splitTextToSize(desc.join("\n"), PAGE_W - 80);
-  doc.text(lines, 40, contentY + 6);
+
+  let curY = startY + 6;
+  for (const para of paragraphs) {
+    if (para === "") {
+      curY += 3;
+      continue;
+    }
+    // Check if it's a heading (short and title-like)
+    if (para === "Elegant accommodation for 12 guests") {
+      curY += 4;
+      doc.setTextColor(WHITE);
+      doc.setFontSize(14);
+      doc.setFont("times", "bold");
+      doc.text(para, 40, curY);
+      curY += 6;
+      doc.setTextColor(SECONDARY_FG);
+      doc.setFontSize(10);
+      doc.setFont("helvetica", "normal");
+      continue;
+    }
+    const lines = doc.splitTextToSize(para, PAGE_W - 80);
+    doc.text(lines, 40, curY);
+    curY += lines.length * 4.5;
+  }
+}
+
+function pageDescription2(doc: jsPDF) {
+  drawPageBg(doc);
+
+  let curY = 25;
+
+  const sections = [
+    {
+      heading: "Designed for comfort and entertaining",
+      paragraphs: [
+        "BARON TRENCK offers a variety of inviting spaces designed for relaxation and socialising. Guests can enjoy the deck jacuzzi with panoramic sea views, spacious exterior decks ideal for alfresco dining, and multiple lounge areas perfect for entertaining or unwinding after a day on the water.",
+        "Modern onboard amenities include Wi-Fi connectivity, full air-conditioning and stabilizers at anchor, ensuring maximum comfort throughout the journey.",
+      ],
+    },
+    {
+      heading: "The ultimate explorer yacht",
+      paragraphs: [
+        "With her robust construction, exceptional range and generous onboard volume, BARON TRENCK is ideally suited for global cruising and luxury island-hopping adventures. Her relatively shallow draft of approximately 3 metres also allows access to secluded bays and anchorages often unreachable by larger yachts.",
+        "Combining expedition capability with refined luxury, BARON TRENCK represents a rare opportunity to own a capable long-range explorer superyacht with timeless appeal and global cruising potential.",
+      ],
+    },
+    {
+      heading: "Key Features",
+      paragraphs: [],
+      bullets: [
+        "Ice-breaker hull",
+        "Fantastic range: 11,600nm / 10 knots",
+        "Low fuel consumption",
+        "Large exterior spaces",
+        "Zero-speed stabilizers NAIAD",
+        "Shore Power Frequency Converters",
+      ],
+    },
+  ];
+
+  for (const section of sections) {
+    doc.setTextColor(WHITE);
+    doc.setFontSize(14);
+    doc.setFont("times", "bold");
+    doc.text(section.heading, 40, curY);
+    curY += 8;
+
+    doc.setTextColor(SECONDARY_FG);
+    doc.setFontSize(10);
+    doc.setFont("helvetica", "normal");
+
+    for (const para of section.paragraphs) {
+      const lines = doc.splitTextToSize(para, PAGE_W - 80);
+      doc.text(lines, 40, curY);
+      curY += lines.length * 4.5 + 3;
+    }
+
+    if (section.bullets) {
+      for (const bullet of section.bullets) {
+        doc.text("•  " + bullet, 44, curY);
+        curY += 5.5;
+      }
+    }
+
+    curY += 8;
+  }
 }
 
 // ─── PAGE 3: SPECIFICATIONS (grouped cards like the website) ───
@@ -345,28 +444,27 @@ function pageGallery(doc: jsPDF, images: HTMLImageElement[], pageTitle: string) 
   });
 }
 
-// ─── DECK PLANS (all 4 on one page) ───
-function pageDeckPlans(doc: jsPDF, deckImages: HTMLImageElement[]) {
+// ─── DECK PLANS (2 pages, 2 decks each) ───
+function pageDeckPlans(doc: jsPDF, deckImages: HTMLImageElement[], labels: string[]) {
   drawPageBg(doc);
 
   const startY = drawSectionHeader(doc, "Deck Plans", "Layout", 18);
 
-  const labels = ["Sundeck", "Upper Deck", "Main Deck", "Lower Deck"];
   const margin = 25;
-  const gap = 3;
+  const gap = 6;
   const deckW = PAGE_W - margin * 2;
-  const availH = PAGE_H - startY - 15;
-  const deckH = (availH - gap * 3 - labels.length * 8) / labels.length;
+  const availH = PAGE_H - startY - 18;
+  const deckH = (availH - gap - 2 * 10) / 2;
 
   deckImages.forEach((img, i) => {
-    const y = startY + 4 + i * (deckH + gap + 8);
+    const y = startY + 4 + i * (deckH + gap + 10);
 
     doc.setTextColor(GOLD);
-    doc.setFontSize(8);
+    doc.setFontSize(9);
     doc.setFont("helvetica", "normal");
-    doc.text(labels[i].toUpperCase(), margin, y + 3);
+    doc.text(labels[i].toUpperCase(), margin, y + 4);
 
-    addImageCover(doc, img, margin, y + 5, deckW, deckH);
+    addImageCover(doc, img, margin, y + 6, deckW, deckH);
   });
 }
 
@@ -471,26 +569,38 @@ export async function generateBrochure() {
   // Page 1 - Cover
   await pageCover(doc, hero);
 
-  // Page 2 - Quick Specs + Description
+  // Page 2 - Quick Specs
   doc.addPage();
   pageQuickSpecs(doc);
 
-  // Page 3 - Specifications
+  // Page 3 - Description (part 1)
+  doc.addPage();
+  pageDescription1(doc);
+
+  // Page 4 - Description (part 2)
+  doc.addPage();
+  pageDescription2(doc);
+
+  // Page 5 - Specifications
   doc.addPage();
   pageSpecifications(doc);
 
-  // Pages 4-8 - Gallery (6 per page, 30 images = 5 pages)
+  // Pages 6-10 - Gallery (6 per page, 30 images = 5 pages)
   for (let i = 0; i < 5; i++) {
     doc.addPage();
     const pageImages = allGallery.slice(i * 6, i * 6 + 6);
     pageGallery(doc, pageImages, galleryPageTitles[i] || "Gallery");
   }
 
-  // Page 9 - Deck Plans
+  // Page 11 - Deck Plans (Sundeck + Upper Deck)
   doc.addPage();
-  pageDeckPlans(doc, [sundeck, upperdeck, maindeck, lowerdeck]);
+  pageDeckPlans(doc, [sundeck, upperdeck], ["Sundeck", "Upper Deck"]);
 
-  // Page 10 - Contact
+  // Page 12 - Deck Plans (Main Deck + Lower Deck)
+  doc.addPage();
+  pageDeckPlans(doc, [maindeck, lowerdeck], ["Main Deck", "Lower Deck"]);
+
+  // Page 13 - Contact
   doc.addPage();
   pageContact(doc);
 
