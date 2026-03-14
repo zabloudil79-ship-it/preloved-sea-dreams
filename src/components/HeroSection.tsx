@@ -14,31 +14,18 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
       </div>
 
-      {/* Top nav bar */}
-      <nav className="relative z-10 flex items-center justify-between px-8 py-6">
-        <div className="flex items-center gap-3 text-7xl text-center">
-        </div>
-        <div className="hidden md:block" />
-        
-
-        
-      </nav>
-
-      {/* Breadcrumb */}
-      <div className="relative z-10 px-8 pt-2">
-        <p className="font-body text-xs tracking-wide text-foreground/50">
-          ​
-        </p>
-      </div>
-
-      {/* Hero content */}
-      <div className="absolute bottom-0 left-0 right-0 z-10 px-8 pb-24 text-center">
+      {/* Hero content - top */}
+      <div className="relative z-10 px-8 pt-4 text-center">
         <p className="mb-2 font-body uppercase tracking-[0.25em] text-primary text-6xl">
           43.5 m SUPERYACHT FOR SALE 
         </p>
         <h1 className="mb-3 font-display text-5xl font-medium tracking-wide text-foreground md:text-9xl">
           BARON TRENCK 
         </h1>
+      </div>
+
+      {/* Bottom content */}
+      <div className="absolute bottom-0 left-0 right-0 z-10 px-8 pb-24 text-center">
         <div className="mb-4 -mx-8">
           <PriceBanner />
         </div>
