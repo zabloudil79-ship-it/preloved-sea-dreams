@@ -14,8 +14,8 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
       </div>
 
-      {/* Hero content - top */}
-      <div className="relative z-10 px-8 pt-4 text-center">
+      {/* Hero content - centered */}
+      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-8 text-center">
         <p className="mb-2 font-body uppercase tracking-[0.25em] text-primary text-6xl">
           43.5 m SUPERYACHT FOR SALE 
         </p>
