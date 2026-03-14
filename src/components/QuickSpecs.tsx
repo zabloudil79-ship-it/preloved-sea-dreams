@@ -1,4 +1,7 @@
 import { Ruler, Calendar, Users, BedDouble, UserCog, Flag, Receipt } from "lucide-react";
+import { generateBrochure } from "@/lib/generateBrochure";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 const specs = [
   { icon: Ruler, label: "Length", value: "43.50 m" },
