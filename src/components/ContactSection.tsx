@@ -16,6 +16,19 @@ const ContactSection = () => {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [generatingPdf, setGeneratingPdf] = useState(false);
+
+  const handleDownload = async () => {
+    setGeneratingPdf(true);
+    try {
+      await generateBrochure();
+      toast({ title: "Brochure Downloaded", description: "Your PDF brochure has been saved." });
+    } catch {
+      toast({ title: "Error", description: "Failed to generate brochure.", variant: "destructive" });
+    } finally {
+      setGeneratingPdf(false);
+    }
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));

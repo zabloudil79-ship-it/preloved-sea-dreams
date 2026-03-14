@@ -14,6 +14,21 @@ const specs = [
 ];
 
 const QuickSpecs = () => {
+  const [generating, setGenerating] = useState(false);
+  const { toast } = useToast();
+
+  const handleDownload = async () => {
+    setGenerating(true);
+    try {
+      await generateBrochure();
+      toast({ title: "Brochure Downloaded", description: "Your PDF brochure has been saved." });
+    } catch {
+      toast({ title: "Error", description: "Failed to generate brochure.", variant: "destructive" });
+    } finally {
+      setGenerating(false);
+    }
+  };
+
   return (
     <section className="bg-card py-12">
       <div className="mx-auto grid max-w-5xl grid-cols-2 gap-8 px-8 md:grid-cols-7">
@@ -26,8 +41,11 @@ const QuickSpecs = () => {
         ))}
       </div>
       <div className="mx-auto mt-10 flex max-w-6xl justify-center px-8">
-        <button className="bg-primary px-8 py-3 font-body text-sm uppercase tracking-[0.15em] text-primary-foreground transition-opacity hover:opacity-90">
-          Download Brochure
+        <button
+          onClick={handleDownload}
+          disabled={generating}
+          className="bg-primary px-8 py-3 font-body text-sm uppercase tracking-[0.15em] text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-50">
+          {generating ? "Generating..." : "Download Brochure"}
         </button>
       </div>
     </section>
