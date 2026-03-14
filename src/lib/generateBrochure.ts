@@ -1,4 +1,4 @@
-import jsPDF from "jspdf";
+import jsPDF, { GState } from "jspdf";
 
 // Import images
 import heroImg from "@/assets/yacht-hero.webp";
