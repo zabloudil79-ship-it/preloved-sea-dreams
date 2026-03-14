@@ -35,6 +35,7 @@ const images = [
   { src: gallery1, alt: "Baron Trenck – side view" },
   { src: gallery2, alt: "Baron Trenck – side view 2" },
   { src: gallery3, alt: "Baron Trenck – bow view" },
+  { src: galleryNew4, alt: "Sundeck jacuzzi – aerial view" },
   { src: gallery4, alt: "Baron Trenck – stern view" },
   { src: gallery5, alt: "Sundeck with jacuzzi" },
   { src: gallery6, alt: "Outdoor lounge" },
