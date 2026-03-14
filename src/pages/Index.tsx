@@ -16,6 +16,7 @@ const Index = () => {
       <QuickSpecs />
       <YachtDescription />
       <ImageGallery />
+      <VideoSection />
       <Specifications />
       <LayoutSection />
       <ContactSection />
