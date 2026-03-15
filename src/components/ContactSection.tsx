@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import {Link} from "react-router-dom";
+import { generateBrochure } from "@/lib/generateBrochure";
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -16,11 +17,24 @@ const ContactSection = () => {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [generatingPdf, setGeneratingPdf] = useState(false);
+
+  const handleDownload = async () => {
+    setGeneratingPdf(true);
+    try {
+      await generateBrochure();
+      toast({ title: "Brochure Downloaded", description: "Your PDF brochure has been saved." });
+    } catch {
+      toast({ title: "Error", description: "Failed to generate brochure.", variant: "destructive" });
+    } finally {
+      setGeneratingPdf(false);
+    }
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
-  
+
   const handleClickBrosure = (e: React.ButtonHTMLAttributes<any>) => {
     window.open(location.host + '/assets/Baron_Trenk_Brochure.pdf', '_blank').focus();
   }
@@ -35,7 +49,7 @@ const ContactSection = () => {
       data[name] = value;
     }
 
-    
+
     data['send_email'] = true;
 
     try {
@@ -101,10 +115,12 @@ const ContactSection = () => {
           </div>
         </div>
 
-        <Link to = '/assets/Baron_Trenk_Brochure.pdf' target="_blank"><button className="mb-16 bg-primary px-12 py-4 font-body text-sm uppercase tracking-[0.2em] text-primary-foreground transition-opacity hover:opacity-90">Download Brochure</button></Link>
-        {/*<a target="_blank" className="mb-16 bg-primary px-12 py-4 font-body text-sm uppercase tracking-[0.2em] text-primary-foreground transition-opacity hover:opacity-90">
-          Download Brochure
-        </a>*/}
+        <button
+          onClick={handleDownload}
+          disabled={generatingPdf}
+          className="mb-16 bg-primary px-12 py-4 font-body text-sm uppercase tracking-[0.2em] text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-50">
+          {generatingPdf ? "Generating..." : "Download Brochure"}
+        </button>
 
         {/* Inquiry Form */}
         <div className="mx-auto max-w-2xl">
