@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import {Link} from "react-router-dom";
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -19,20 +20,55 @@ const ContactSection = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
+  
+  const handleClickBrosure = (e: React.ButtonHTMLAttributes<any>) => {
+    window.open(location.host + '/assets/Baron_Trenk_Brochure.pdf', '_blank').focus();
+  }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate submission
-    setTimeout(() => {
-      toast({
-        title: "Inquiry Sent",
-        description: "Thank you! We will get back to you shortly."
-      });
+    const data = {};
+    const formData = new FormData(e.target);
+    for (const [name, value] of formData.entries()) {
+      data[name] = value;
+    }
+
+    data['send_email'] = true;
+
+    try {
+      const xhr = new XMLHttpRequest();
+
+      const body = Object.keys(data)
+          .map(key => key + "=" + encodeURIComponent(data[key]))
+          .join("&");
+
+      xhr.open("POST", window.location.href, true);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          setTimeout(() => {
+            toast({
+              title: "Inquiry Sent",
+              description: "Thank you! We will get back to you shortly."
+            });
+            setFormData({ firstName: "", lastName: "", phone: "", email: "", message: "" });
+            setIsSubmitting(false);
+          }, 1000);
+        } else {
+          setFormData({ firstName: "", lastName: "", phone: "", email: "", message: "" });
+          setIsSubmitting(false);
+          console.error("Error:", xhr.status);
+        }
+      };
+      xhr.send(body);
+    } catch (error) {
+      console.error("Error:", error);
       setFormData({ firstName: "", lastName: "", phone: "", email: "", message: "" });
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (
@@ -64,9 +100,10 @@ const ContactSection = () => {
           </div>
         </div>
 
-        <button className="mb-16 bg-primary px-12 py-4 font-body text-sm uppercase tracking-[0.2em] text-primary-foreground transition-opacity hover:opacity-90">
+        <Link to = '/assets/Baron_Trenk_Brochure.pdf' target="_blank"><button className="mb-16 bg-primary px-12 py-4 font-body text-sm uppercase tracking-[0.2em] text-primary-foreground transition-opacity hover:opacity-90">Download Brochure</button></Link>
+        {/*<a target="_blank" className="mb-16 bg-primary px-12 py-4 font-body text-sm uppercase tracking-[0.2em] text-primary-foreground transition-opacity hover:opacity-90">
           Download Brochure
-        </button>
+        </a>*/}
 
         {/* Inquiry Form */}
         <div className="mx-auto max-w-2xl">

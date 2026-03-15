@@ -1,4 +1,5 @@
 import { Ruler, Calendar, Users, BedDouble, UserCog, Flag, Receipt } from "lucide-react";
+import {Link} from "react-router-dom";
 
 const specs = [
   { icon: Ruler, label: "Length", value: "43.50 m" },
@@ -23,9 +24,7 @@ const QuickSpecs = () => {
         ))}
       </div>
       <div className="mx-auto mt-10 flex max-w-6xl justify-center px-8">
-        <button className="bg-primary px-8 py-3 font-body text-sm uppercase tracking-[0.15em] text-primary-foreground transition-opacity hover:opacity-90">
-          Download Brochure
-        </button>
+        <Link to = '/assets/Baron_Trenk_Brochure.pdf' target="_blank"><button className="bg-primary px-8 py-3 font-body text-sm uppercase tracking-[0.15em] text-primary-foreground transition-opacity hover:opacity-90">Download Brochure</button></Link>
       </div>
     </section>
   );
