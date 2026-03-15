@@ -35,6 +35,7 @@ const ContactSection = () => {
       data[name] = value;
     }
 
+    
     data['send_email'] = true;
 
     try {

@@ -11,6 +11,8 @@ const specs = [
   { icon: Receipt, label: "VAT", value: "Not Paid" },
 ];
 
+
+
 const QuickSpecs = () => {
   return (
     <section className="bg-card py-12">
