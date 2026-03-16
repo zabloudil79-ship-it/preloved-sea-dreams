@@ -15,14 +15,14 @@ const HeroSection = () => {
       </div>
 
       {/* Hero content - top */}
-      <div className="relative z-10 px-8 pt-4 text-center">
-        <p className="font-body uppercase tracking-[0.25em] text-primary text-6xl leading-tight">
+      <div className="relative z-10 px-8 pt-4 text-center space-y-0">
+        <p className="font-body uppercase tracking-[0.25em] text-primary text-6xl leading-none">
           43.5 M SUPERYACHT
         </p>
-        <p className="font-body uppercase tracking-[0.25em] text-primary text-6xl leading-tight">
+        <p className="font-body uppercase tracking-[0.25em] text-primary text-6xl leading-none">
           FOR SALE
         </p>
-        <h1 className="mb-3 font-display text-5xl font-medium tracking-wide text-foreground md:text-9xl">
+        <h1 className="font-display text-5xl font-medium tracking-wide text-foreground md:text-9xl leading-none">
           BARON TRENCK 
         </h1>
       </div>
