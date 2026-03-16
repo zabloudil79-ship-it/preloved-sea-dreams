@@ -22,7 +22,7 @@ const HeroSection = () => {
         <p className="font-body uppercase tracking-[0.25em] text-6xl leading-none text-destructive">
           FOR SALE
         </p>
-        <h1 className="-mt-10 font-display text-5xl font-medium tracking-wide text-foreground md:text-9xl leading-none">
+        <h1 className="-mt-14 font-display text-5xl font-medium tracking-wide text-foreground md:text-9xl leading-none">
           BARON TRENCK 
         </h1>
       </div>
