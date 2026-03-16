@@ -110,10 +110,13 @@ async function pageCover(doc: jsPDF, heroImage: HTMLImageElement) {
   drawPageBg(doc);
   addImageCover(doc, heroImage, 0, 0, PAGE_W, PAGE_H);
 
-  // Gradient overlay top + bottom
-  doc.setFillColor(0, 0, 0);
-  doc.setGState(new GState({ opacity: 0.5 }));
+  // Light gradient overlay matching website style
+  doc.setFillColor(15, 19, 25); // DARK_BG color
+  doc.setGState(new GState({ opacity: 0.1 }));
   doc.rect(0, 0, PAGE_W, PAGE_H, "F");
+  // Stronger overlay at bottom for text readability
+  doc.setGState(new GState({ opacity: 0.6 }));
+  doc.rect(0, PAGE_H * 0.5, PAGE_W, PAGE_H * 0.5, "F");
   doc.setGState(new GState({ opacity: 1 }));
 
   // Top content
