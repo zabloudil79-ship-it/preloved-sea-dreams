@@ -9,7 +9,7 @@ const HeroSection = () => {
         <img
           src={heroImage}
           alt="M/Y OCEANIC DREAM - Luxury Motor Yacht"
-          className="h-full w-full object-cover brightness-125 contrast-105" />
+          className="h-full w-full object-cover" />
         
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent" />
       </div>
