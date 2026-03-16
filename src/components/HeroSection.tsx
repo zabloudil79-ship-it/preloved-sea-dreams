@@ -16,8 +16,11 @@ const HeroSection = () => {
 
       {/* Hero content - top */}
       <div className="relative z-10 px-8 pt-4 text-center">
-        <p className="mb-2 font-body uppercase tracking-[0.25em] text-primary text-6xl">
-          43.5 m SUPERYACHT FOR SALE 
+        <p className="font-body uppercase tracking-[0.25em] text-primary text-6xl leading-tight">
+          43.5 M SUPERYACHT
+        </p>
+        <p className="font-body uppercase tracking-[0.25em] text-primary text-6xl leading-tight">
+          FOR SALE
         </p>
         <h1 className="mb-3 font-display text-5xl font-medium tracking-wide text-foreground md:text-9xl">
           BARON TRENCK 
