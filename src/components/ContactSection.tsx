@@ -44,7 +44,7 @@ const ContactSection = () => {
     setIsSubmitting(true);
 
     const data = {};
-    const formData = new FormData(e.target);
+    const formData = new FormData(e.target as HTMLFormElement);
     for (const [name, value] of formData.entries()) {
       data[name] = value;
     }
